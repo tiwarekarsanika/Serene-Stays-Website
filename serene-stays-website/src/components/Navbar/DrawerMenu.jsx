@@ -14,14 +14,22 @@ function DrawerMenu() {
 
   return (
     <>
-      <Button type="primary" onClick={showDrawer}>
-        Menu
-      </Button>
-      <Drawer title="Basic Drawer" onClose={onClose} open={open}>
-        <p>Home</p>
-        <p>About</p>
-        <p>Contact</p>
-        <p>FAQs & Booking</p>
+      <button type="primary" onClick={showDrawer} className="font-extrabold text-xl bg-transparent border-none cursor-pointer" style={{ fontFamily: 'var(--font-navigation)', color: 'var(--color--secondary)' }}>
+        MENU
+      </button>
+      <Drawer 
+      title="MENU" 
+      onClose={onClose} 
+      open={open} 
+      bodyStyle={{ backgroundColor: 'var(--color--background)' }} 
+      headerStyle={{ backgroundColor: 'var(--color--background)' }} 
+      placement="right" 
+      style={{ fontFamily: 'var(--font-header)', color: 'var(--color--text)', fontSize: '1.5rem' }}
+      closeIcon={<p style={{ color: 'white', fontSize: '1.5rem', fontFamily: 'var(--font-navigation)' }}>X</p>} >
+        <p className='cursor-pointer my-6 hover:text-[rgb(244,178,154)]'>Home</p>
+        <p className='cursor-pointer my-6 hover:text-[rgb(244,178,154)]' >About</p>
+        <p className='cursor-pointer my-6 hover:text-[rgb(244,178,154)]'>Contact</p>
+        <p className='cursor-pointer my-6 hover:text-[rgb(244,178,154)]'>FAQs & Booking</p>
       </Drawer>
     </>
   );
