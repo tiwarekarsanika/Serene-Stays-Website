@@ -4,16 +4,17 @@ import Header from "../components/Header";
 import WelcomeText from "../components/WelcomeText";
 import USPs from "../components/USPs";
 import AboutPreview from "../components/AboutPreview";
+import Footer from "../components/Footer";
 
 export function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Header />
       <WelcomeText />
       <AboutPreview />
       <USPs />
-      <h1>Home</h1>
+      {/* <Footer /> */}
     </div>
   );
 }
