@@ -25,21 +25,21 @@ function Footer() {
                         <h1 className="text-4xl font-bold">Serene Stays</h1>
                     </div>
                     <div className="mt-4 flex flex-row space-x-4 justify-center items-center">
-                        <InstagramIcon style={{ fontSize: "2.5rem", cursor: "pointer", color: hover ? "var(--color--secondary)" : "white" }}
+                        <InstagramIcon className={`text-2.5rem cursor-pointer ${hover ? "text-[var(--color-primary)]" : "text-white"}`}
                             onMouseEnter={() => setHover(true)}
                             onMouseLeave={() => setHover(false)}
                         />
-                        <span className="text-xl" style={{ fontFamily: "var(--font-body)" }}>Lets Stay Connected !</span>
+                        <span className="text-xl font-body">Lets Stay Connected !</span>
                     </div>
-                    <div className="mt-10 flex flex-row space-x-8" style={{ fontFamily: "var(--font-navigation)"}}>
-                        <span className="cursor-pointer hover:text-[var(--color--secondary)]">About</span>
-                        <span className="cursor-pointer hover:text-[var(--color--secondary)]">Contact Us</span>
-                        <span className="cursor-pointer hover:text-[var(--color--secondary)]">FAQs & Booking Policy</span>
+                    <div className="mt-10 flex flex-row space-x-8 font-navigation">
+                        <span className="cursor-pointer hover:text-[var(--color-primary)]">About</span>
+                        <span className="cursor-pointer hover:text-[var(--color-primary)]">Contact Us</span>
+                        <span className="cursor-pointer hover:text-[var(--color-primary)]">FAQs & Booking Policy</span>
                     </div>
                 </div>
 
                 <div className="flex flex-row justify-around space-x-6 pr-12">
-                    <div style={{ height: '250px', width: '450px' }}>
+                    <div className="h-250px w-450px">
                         <GoogleMapReact
                             bootstrapURLKeys={{ key: "YOUR_GOOGLE_MAPS_KEY" }}
                             defaultCenter={defaultProps.center}
@@ -55,8 +55,8 @@ function Footer() {
                 </div>
             </div>
 
-            <hr className="border-t border-[var(--color--secondary)] my-4" />
-            <div className="text-center font-[var(--font-body)] pb-4 text-[var(--color--secondary)] font-semibold">
+            <hr className="border-t border-[var(--color-primary)] my-4" />
+            <div className="text-center font-navigation pb-4 text-[var(--color-primary)]">
                 Copyright <CopyrightIcon className="inline-block text-sm" /> 2024 Serene Stays | Made with ❤ by Sanika
             </div>
         </div>

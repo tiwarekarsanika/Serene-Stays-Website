@@ -9,4 +9,10 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  optimizeDeps: {
+    include: ['styled-components']
+  },
+  resolve: {
+    dedupe: ['styled-components']
+  }
 })

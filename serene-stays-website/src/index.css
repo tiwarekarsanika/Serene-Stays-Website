@@ -8,12 +8,11 @@
   --font-body: 'Ovo', serif;               
   --font-navigation: 'Poppins', sans-serif;
 
-  /* Global Color Variables */
-  --color--text: #ffffff;
-  --color--background: #0f2a29;
-  --color--primary: #fed6be;
-  --color--secondary: #f4b29a;
-  --color--accent: #82e8c9;
+  --color-text: #ffffff;
+  --color-background: #0a1d1c;
+  --color-secondary: #fed6be;
+  --color-primary: #f4b29a;
+  --color-accent: #82e8c9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,9 +20,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-header {
+  font-family: var(--font-header);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+.font-navigation {
+  font-family: var(--font-navigation);
+}
+
 body {
-  background-color: var(--color--background);
-  color: var(--color--text);
+  background-color: var(--color-background);
+  color: var(--color-text);
   height: 100%;
   width: 100%;
   margin: 0;

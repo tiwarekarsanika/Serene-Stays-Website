@@ -36,7 +36,7 @@ function WelcomeText() {
                     <FormatQuoteRoundedIcon
                         sx={{
                             fontSize: "5rem",
-                            color: "var(--color--secondary)",
+                            color: "var(--color-primary)",
                             margin: "-1rem",
                             opacity: 0.9,
                         }}
@@ -45,11 +45,9 @@ function WelcomeText() {
                 </span>
                 <span
                     style={{
-                        fontFamily: "Tangerine, cursive",
-                        fontSize: "4rem",
-                        color: "var(--color--primary)",
+                        fontFamily: "Tangerine, cursive"
                     }}
-                    className="ml-8"
+                    className="ml-8 text-[var(--color-secondary)] text-6xl"
                 >
                     Where every stay is a story, and every moment is a memory.
                 </span>
@@ -57,11 +55,9 @@ function WelcomeText() {
             <div>
                 <span
                     style={{
-                        fontFamily: "Tangerine, cursive",
-                        fontSize: "4rem",
-                        color: "var(--color--primary)",
+                        fontFamily: "Tangerine, cursive"
                     }}
-                    className="mr-8"
+                    className="mr-8 text-[var(--color-secondary)] text-6xl"
                 >
                     Welcome to your dream getaway at our handpicked luxury resorts!
                 </span>
@@ -69,7 +65,7 @@ function WelcomeText() {
                     <FormatQuoteRoundedIcon
                         sx={{
                             fontSize: "5rem",
-                            color: "var(--color--secondary)",
+                            color: "var(--color-primary)",
                             margin: "-1rem",
                             opacity: 0.9,
                         }}

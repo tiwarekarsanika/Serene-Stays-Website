@@ -28,7 +28,7 @@ function AboutPreview() {
                         metus.
                     </p>
                     <div className="flex justify-end">
-                        <button className="bg-transparent text-secondary font-navigation border-[1px] text-[var(--color--secondary)] font-[var(--font-navigation)] border-[var(--color--secondary)] border-secondary rounded-xl px-4 py-2 cursor-pointer">
+                        <button className="bg-transparent text-[var(--color-secondary)] font-navigation border-[1px] text-[var(--color-primary)] font-[var(--font-navigation)] border-[var(--color-primary)] border-secondary rounded-xl px-4 py-2 cursor-pointer">
                             Read More
                         </button>
                     </div>

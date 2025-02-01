@@ -45,16 +45,16 @@ function USPs() {
 
     return (
         <div>
-            <h1 className="text-6xl text-center mt-30 mb-20" sx={{ fontFamily: "var(--font-header" }}>Why Choose Us?</h1>
+            <h1 className="text-6xl text-center mt-30 mb-20 font-header">Why Choose Us?</h1>
             <div style={timelineContainerStyle}>
-                <VerticalTimeline lineColor="var(--color--secondary)">
+                <VerticalTimeline lineColor="var(--color-primary)">
                     {timelineData.map((item, index) => (
                         <VerticalTimelineElement
                             key={index}
                             className="vertical-timeline-element--work"
                             contentStyle={{
                                 background: 'transparent',
-                                color: 'var(--color--text)',
+                                color: 'var(--color-text)',
                                 boxShadow: 'none',
                                 textAlign: index % 2 === 0 ? 'right' : 'left',
                                 padding: 0,
@@ -68,8 +68,8 @@ function USPs() {
                                 display: 'none'
                             }}
                             iconStyle={{
-                                background: 'var(--color--secondary)',
-                                color: 'var(--color--text)', 
+                                background: 'var(--color-primary)',
+                                color: 'var(--color-text)', 
                             }}
                             icon={item.icon}
                         >
@@ -88,12 +88,12 @@ function USPs() {
                     ))}
                     <div
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        style={{ cursor: 'pointer' }}
+                        className="cursor-pointer"
                     >
                         <VerticalTimelineElement
                             iconStyle={{
-                                background: 'var(--color--secondary)',
-                                color: 'var(--color--text)',
+                                background: 'var(--color-primary)',
+                                color: 'var(--color-text)',
                                 cursor: 'pointer'
                             }}
                             icon={<KeyboardDoubleArrowUpIcon />}

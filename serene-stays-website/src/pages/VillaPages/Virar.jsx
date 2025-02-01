@@ -1,6 +1,6 @@
 import React from "react";
 import VillaCard from "../../components/VillaCard";
-import img1 from "../../assets/WilderNest/Wildernest-WebP/IMG_0001.webp"
+import img1 from "../../assets/CasaDeFlores/CasaDeFlores-WebP/IMG_0001.webp"
 
 function Virar() {
 
