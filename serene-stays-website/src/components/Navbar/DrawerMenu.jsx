@@ -28,10 +28,10 @@ function DrawerMenu() {
       className="text-2xl text-[var(--color-text)] font-header"
       closeIcon={<p className="text-xl text-[var(--color-text)] font-navigation"
         >X</p>} >
-        <Link to="/"><p className='cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Home</p></Link>
-        <Link to="/about"><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]' >About</p></Link>
-        <Link to="/contact"><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Contact</p></Link>
-        <Link to="/policypage"><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>FAQs & Booking Policy</p></Link>
+        <Link to="/" onClick={onClose}><p className='cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Home</p></Link>
+        <Link to="/about" onClick={onClose}><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]' >About</p></Link>
+        <Link to="/contact" onClick={onClose}><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Contact</p></Link>
+        <Link to="/policypage" onClick={onClose}><p className='cursor-pointer  text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>FAQs & Booking Policy</p></Link>
       </Drawer>
     </>
   );

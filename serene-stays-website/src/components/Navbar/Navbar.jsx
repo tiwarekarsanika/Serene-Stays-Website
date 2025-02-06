@@ -5,7 +5,7 @@ import Virar from "../../pages/VillaPages/Virar";
 
 function Navbar() {
     return (
-        <div className="flex flex-row justify-between items-center px-4 py-2 shadow-xl" style={{ backgroundColor: '#0a1a19', boxShadow: '0 0.5rem 2rem rgba(244,178,154, 0.2)' }}>
+        <div className="flex flex-row justify-between items-center px-4 py-2 shadow-xl" style={{ backgroundColor: '#0a1a19', boxShadow: '0 0.5rem 2rem rgba(244,178,154, 0.1)' }}>
             <div className="flex flex-row items-center space-x-6 ml-6">
                 <h4 className="font-bold text-xl">Logo</h4>
                 <h1 className="text-4xl">Serene Stays</h1>

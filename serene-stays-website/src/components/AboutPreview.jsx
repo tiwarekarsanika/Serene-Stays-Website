@@ -1,20 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img2 from '../assets/CasaDeFlores/CasaDeFlores-WebP/IMG_0002.webp';
+import { Link } from 'react-router-dom';
 
 function AboutPreview() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleScroll = () => {
+        const element = document.getElementById("about-preview-section");
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight * 0.75) {
+            setIsVisible(true);
+        }
+        else {
+            setIsVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+     
     return (
         <div>
             <h1 className="text-6xl text-center mt-20 mb-20 font-header">About Us</h1>
-            <div className="flex flex-row items-center justify-center ml-20 mr-20 space-x-10">
-                <div className="w-1/2 h-full">
+            <div id="about-preview-section" className="flex flex-row items-center justify-center mx-20 space-x-6">
+                <div
+                    className={`w-1/2 h-full transition-all duration-3000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
+                        }`}
+                >
                     <img
                         src={img2}
                         alt="About Us"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 </div>
-                <div className="w-1/2 flex flex-col justify-between p-4">
-                    <p className="text-left text-xl">
+                <div
+                    className={`w-1/2 flex flex-col justify-between transition-all duration-3000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+                        }`}
+                >
+                    <p className="text-left text-xl font-body">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mauris
                         arcu, finibus quis pellentesque sit amet, vestibulum sit amet ante.
                         Praesent eu commodo metus. Integer ac magna vitae odio dignissim
@@ -24,13 +53,12 @@ function AboutPreview() {
                         ligula, pulvinar in eros non, ullamcorper bibendum nulla. Donec
                         ultricies feugiat nibh vel fringilla. Maecenas in ligula tempor,
                         maximus diam eget, eleifend ipsum. Proin porta elit elit, nec venenatis
-                        quam venenatis sed. Cras scelerisque enim at orci interdum, id cursus
-                        metus.
+                        quam venenatis sed.
                     </p>
                     <div className="flex justify-end">
-                        <button className="bg-transparent text-[var(--color-secondary)] font-navigation border-[1px] text-[var(--color-primary)] font-[var(--font-navigation)] border-[var(--color-primary)] border-secondary rounded-xl px-4 py-2 cursor-pointer">
+                        <Link to="/about"><button className="custom-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                             Read More
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
             </div>

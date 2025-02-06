@@ -33,7 +33,7 @@ function USPs() {
         },
         {
             title: "Rich Heritage in Hospitality",
-            description: "With over 20 years of experience in hospitality, our team ensures handles every detail of your stay with care & precision.",
+            description: "With 20 years of experience in hospitality, our team ensures handles every detail of your stay with care & precision.",
             icon: <HomeIcon />
         },
         {
@@ -59,7 +59,7 @@ function USPs() {
                                 textAlign: index % 2 === 0 ? 'right' : 'left',
                                 padding: 0,
                                 margin: 0,
-                                minHeight: '2rem',  // Added to ensure consistent height
+                                minHeight: '1.5rem', 
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center'
@@ -73,17 +73,12 @@ function USPs() {
                             }}
                             icon={item.icon}
                         >
-                            <h3 style={{
-                                fontFamily: 'var(--font-header)',
-                            }} className="text-4xl mt-0">
+                            <h3 className="text-4xl mt-0 font-header">
                                 {item.title}
                             </h3>
-                            <p style={{
-                                fontFamily: 'var(--font-body)',
-                                fontSize: '1.1rem'
-                            }}>
+                            <h3 className="font-body text-lg p-2">
                                 {item.description}
-                            </p>
+                            </h3>
                         </VerticalTimelineElement>
                     ))}
                     <div

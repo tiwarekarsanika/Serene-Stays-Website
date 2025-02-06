@@ -27,7 +27,7 @@ function WelcomeText() {
     return (
         <div
             id="welcome-text-section"
-            className={`transition-all duration-2000 ${
+            className={`transition-all duration-3000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
         >
@@ -36,18 +36,16 @@ function WelcomeText() {
                     <FormatQuoteRoundedIcon
                         sx={{
                             fontSize: "5rem",
-                            color: "var(--color-primary)",
                             margin: "-1rem",
-                            opacity: 0.9,
                         }}
-                        className="transform scale-x-[-1] inline-block align-top"
+                        className="transform scale-x-[-1] inline-block align-top text-[var(--color-primary)] opacity-0.9"
                     />
                 </span>
                 <span
                     style={{
                         fontFamily: "Tangerine, cursive"
                     }}
-                    className="ml-8 text-[var(--color-secondary)] text-6xl"
+                    className="ml-8 text-[var(--color-secondary)] text-7xl"
                 >
                     Where every stay is a story, and every moment is a memory.
                 </span>
@@ -57,7 +55,7 @@ function WelcomeText() {
                     style={{
                         fontFamily: "Tangerine, cursive"
                     }}
-                    className="mr-8 text-[var(--color-secondary)] text-6xl"
+                    className="mr-8 text-[var(--color-secondary)] text-7xl"
                 >
                     Welcome to your dream getaway at our handpicked luxury resorts!
                 </span>
@@ -65,11 +63,9 @@ function WelcomeText() {
                     <FormatQuoteRoundedIcon
                         sx={{
                             fontSize: "5rem",
-                            color: "var(--color-primary)",
                             margin: "-1rem",
-                            opacity: 0.9,
                         }}
-                        className="text-4xl inline-block"
+                        className="text-4xl inline-block text-[var(--color-primary)] opacity-0.9"
                     />
                 </span>
             </div>

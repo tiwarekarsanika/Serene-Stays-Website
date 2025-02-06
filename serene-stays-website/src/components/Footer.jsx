@@ -1,19 +1,9 @@
 import React from "react";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleMapReact from 'google-map-react';
+import { Link } from "react-router-dom";
 
 function Footer() {
-    const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-    const defaultProps = {
-        center: {
-            lat: 10.99835602,
-            lng: 77.01502627
-        },
-        zoom: 11
-    };
-
     const [hover, setHover] = React.useState(false);
 
     return (
@@ -25,32 +15,32 @@ function Footer() {
                         <h1 className="text-4xl font-bold">Serene Stays</h1>
                     </div>
                     <div className="mt-4 flex flex-row space-x-4 justify-center items-center">
+                    <Link to="https://www.instagram.com/_serenestays_" target="_blank">
                         <InstagramIcon className={`text-2.5rem cursor-pointer ${hover ? "text-[var(--color-primary)]" : "text-white"}`}
                             onMouseEnter={() => setHover(true)}
                             onMouseLeave={() => setHover(false)}
-                        />
+                            sx={{ fontSize: 40 }}
+                        /></Link>
                         <span className="text-xl font-body">Lets Stay Connected !</span>
                     </div>
                     <div className="mt-10 flex flex-row space-x-8 font-navigation">
-                        <span className="cursor-pointer hover:text-[var(--color-primary)]">About</span>
-                        <span className="cursor-pointer hover:text-[var(--color-primary)]">Contact Us</span>
-                        <span className="cursor-pointer hover:text-[var(--color-primary)]">FAQs & Booking Policy</span>
+                        <Link to="/about"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</span></Link>
+                        <Link to="/contact"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</span></Link>
+                        <Link to="/policypage"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >FAQs & Booking Policy</span></Link>
                     </div>
                 </div>
 
                 <div className="flex flex-row justify-around space-x-6 pr-12">
-                    <div className="h-250px w-450px">
-                        <GoogleMapReact
-                            bootstrapURLKeys={{ key: "YOUR_GOOGLE_MAPS_KEY" }}
-                            defaultCenter={defaultProps.center}
-                            defaultZoom={defaultProps.zoom}
-                        >
-                            <AnyReactComponent
-                                lat={19.228927657371145}
-                                lng={72.84031501022369}
-                                text="My Marker"
-                            />
-                        </GoogleMapReact>
+                    <div className="h-50 w-100">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.152934861814!2d72.8260966742591!3d19.232165482004827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b13804e8c9e5%3A0x714ffd89977f7d1d!2sMaxus%20Cinemas!5e0!3m2!1sen!2sin!4v1738845535810!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style={{ border: 0 }} 
+                            allowFullScreen="" 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
                     </div>
                 </div>
             </div>
