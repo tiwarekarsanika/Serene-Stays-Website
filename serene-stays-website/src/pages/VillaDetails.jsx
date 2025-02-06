@@ -16,7 +16,7 @@ function VillaDetails() {
     const [displayedImages, setDisplayedImages] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
     const initialLoadCount = 8;
-    const { villa } = location.state || {}; // Access villa data
+    const { villa } = location.state || {}; 
     // console.log(villa);
 
     if (!villa) {
