@@ -8,6 +8,7 @@ import VillaDetails from './pages/VillaDetails'
 import About from './pages/About'
 import PolicyPage from './pages/PolicyPage'
 import Contact from './pages/Contact'
+import Goa from './pages/VillaPages/Goa'
 
 
 function App() {
@@ -18,11 +19,12 @@ function App() {
         <div className="min-h-screen">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/virar" element={<Virar />} />
             <Route path="/:location/villa-details" element={<VillaDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/policypage" element={<PolicyPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/virar" element={<Virar />} />
+            <Route path="/goa" element={<Goa />} />
           </Routes>
         </div>
         <Footer />

@@ -4,11 +4,12 @@ import Lightbox from "yet-another-react-lightbox";
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
 import "yet-another-react-lightbox/styles.css"
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import {Zoom, Thumbnails, Fullscreen} from "yet-another-react-lightbox/plugins";
+import { Zoom, Thumbnails, Fullscreen } from "yet-another-react-lightbox/plugins";
 import "yet-another-react-lightbox/plugins/thumbnails.css"
-
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from '@cloudinary/react';
+import { fill } from "@cloudinary/url-gen/actions/resize";
 
 function VillaDetails() {
     const [index, setIndex] = React.useState(-1);
@@ -16,8 +17,8 @@ function VillaDetails() {
     const [displayedImages, setDisplayedImages] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
     const initialLoadCount = 8;
-    const { villa } = location.state || {}; 
-    // console.log(villa);
+    const { villa } = location.state || {};
+    const [currentSlides, setCurrentSlides] = React.useState([]);
 
     if (!villa) {
         return <div>No villa details available!</div>;
@@ -25,99 +26,145 @@ function VillaDetails() {
 
     const [processedImages, setProcessedImages] = React.useState([]);
 
-    const getImageDimensions = (src) => {
-        return new Promise((resolve) => {
+    const cld = new Cloudinary({
+        cloud: {
+            cloudName: "sanikaDemo",
+        },
+    });
+
+    const headerImage = cld.image(villa.headerImg)
+        .resize(fill().width(800).height(600))
+        .quality("auto:best")
+
+    const getCloudinaryUrl = (publicId) => {
+        try {
+            const img = cld.image(publicId).quality("auto:best");
+            const url = img.toURL();
+            console.log("Generated Cloudinary URL:", url);
+            return url;
+        } catch (error) {
+            console.error("Error generating Cloudinary URL for", publicId, error);
+            return "";
+        }
+    };
+
+    const getImageDimensions = (publicId) => {
+        return new Promise((resolve, reject) => {
             const img = new Image();
+            const url = getCloudinaryUrl(publicId);
+
             img.onload = () => {
+                console.log("Loaded image:", url);
                 resolve({
-                    src,
+                    src: url,
                     width: img.width,
-                    height: img.height
+                    height: img.height,
+                    publicId: publicId
                 });
             };
-            img.src = src;
+
+            img.onerror = (error) => {
+                console.error("Error loading image:", publicId, error);
+                reject(error);
+            };
+
+            img.src = url;
         });
     };
 
     React.useEffect(() => {
-        const rawImages = [
-            '/images/CasaDeFlores-WebP/IMG_0001.webp',
-            '/images/CasaDeFlores-WebP/IMG_0002.webp',
-            '/images/CasaDeFlores-WebP/IMG_0003.webp',
-            '/images/CasaDeFlores-WebP/IMG_0004.webp',
-            '/images/CasaDeFlores-WebP/IMG_0005.webp',
-            '/images/CasaDeFlores-WebP/IMG_0006.webp',
-            '/images/CasaDeFlores-WebP/IMG_0007.webp',
-            '/images/CasaDeFlores-WebP/IMG_0008.webp',
-            '/images/CasaDeFlores-WebP/IMG_0009.webp',
-            '/images/CasaDeFlores-WebP/IMG_0010.webp',
-            '/images/CasaDeFlores-WebP/IMG_0011.webp',
-            '/images/CasaDeFlores-WebP/IMG_0012.webp',
-            '/images/CasaDeFlores-WebP/IMG_0013.webp'
-        ];
         const loadImages = async () => {
             setLoading(true);
-            const imagesWithDimensions = await Promise.all(
-                rawImages.map(src => getImageDimensions(src))
-            );
-            setProcessedImages(imagesWithDimensions);
-            setDisplayedImages(imagesWithDimensions.slice(0, initialLoadCount));
+            let allProcessedImages = {};
+    
+            for (let singleVilla of villa.villas) {
+                const safeImages = singleVilla.images || [];
+                console.log(`Total images for Villa ${singleVilla.villaNumber}:`, safeImages.length);
+    
+                const imagesWithDimensions = await Promise.all(
+                    safeImages.map(publicId => getImageDimensions(publicId))
+                );
+    
+                allProcessedImages[singleVilla.villaNumber] = imagesWithDimensions;
+            }
+    
+            setProcessedImages(allProcessedImages);
+            
+            // Initial display logic
+            const initialDisplay = {};
+            Object.keys(allProcessedImages).forEach(villaNumber => {
+                initialDisplay[villaNumber] = allProcessedImages[villaNumber].slice(0, initialLoadCount);
+            });
+            
+            setDisplayedImages(initialDisplay);
             setLoading(false);
         };
-
+    
         loadImages();
-    }, []);
-
-    const loadMore = () => {
-        const currentLength = displayedImages.length;
-        const nextBatch = processedImages.slice(
-            currentLength,
-            currentLength + initialLoadCount
-        );
-        setDisplayedImages(prev => [...prev, ...nextBatch]);
+    }, [villa.villas, location.state]);
+    
+    const loadMore = (villaNumber) => {
+        setDisplayedImages(prev => ({
+            ...prev,
+            [villaNumber]: processedImages[villaNumber],
+        }));
     };
 
-    const loadLess = () => {
-        const newLength = Math.max(
-            initialLoadCount,
-            displayedImages.length - initialLoadCount
-        );
-        setDisplayedImages(prev => prev.slice(0, newLength));
+    const loadLess = (villaNumber) => {
+        setDisplayedImages(prev => ({
+            ...prev,
+            [villaNumber]: prev[villaNumber].slice(0, initialLoadCount),
+        }));
     };
 
-    const hasMore = displayedImages.length < processedImages.length;
-    const canLoadLess = displayedImages.length > initialLoadCount;
+    const hasMore = (villaNumber) =>
+        displayedImages[villaNumber]?.length < processedImages[villaNumber]?.length;
+
+    const canLoadLess = (villaNumber) =>
+        displayedImages[villaNumber]?.length > initialLoadCount;
 
     return (
         <div className="p-20">
             <div className="flex flex-col justify-between">
                 <div className="flex flex-row justify between gap-4">
-                    <img className='h-80 w-80' src={villa.image} alt="villa" />
-                    <div className="text-left flex flex-col gap-4">
+                    <AdvancedImage
+                        cldImg={headerImage}
+                        className="w-80 h-60 object-fill"
+                    />
+                    <div className="text-left flex flex-col gap-2">
                         <div>
                             <h1 className="text-[var(--font-header)] text-3xl inline-block">{villa.name}</h1>
                         </div>
-                        <div className="text-left text-[var(--font-body)]">
-                            <span>{villa.numVillas} {villa.numVillas > 1 ? "villas" : "villa"} | </span>
-                            <span>{villa.space} {villa.numVillas > 1 ? "each" : ""}</span>
+                        <div className="text-left font-body text-xl">
+                            {villa.numVillas ? (
+                                <>
+                                    <span>{villa.numVillas} {villa.numVillas > 1 ? "villas" : "villa"} | </span>
+                                    <span>{villa.space} {villa.numVillas > 1 ? "each" : ""}</span>
+                                </>
+                            ) : (
+                                <span>{villa.numRooms} Rooms</span>
+                            )}
                         </div>
-                        {villa.occasions && (
-                            <div className="flex flex-wrap gap-1.5 space-y-1">
-                                <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
-                                    Perfect for all occasions like {villa.occasions.join(", ")}
-                                </span>
-                            </div>
+                        {villa.hotspots?.length > 0 && (
+                            <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+                                Property is located {villa.hotspots.join(", ")}
+                            </span>
                         )}
-                        {villa.specialEvents && (
-                            <div className="flex flex-wrap gap-1.5 space-y-1">
-                                <span className="text-[var(--color-text)] font-[var(--font-navigation)] italic">
-                                    Special events include: {villa.specialEvents.join(", ")}
-                                </span>
-                            </div>
+                        {villa.occasions?.length > 0 && (
+                            <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+                                Perfect for all occasions like {villa.occasions.join(", ")}
+                            </span>
                         )}
-                        <div className="flex flex-wrap gap-1.5 space-y-1">
+
+                        {villa.specialEvents?.length > 0 && (
+                            <span className="text-[var(--color-text)] font-[var(--font-navigation)] italic">
+                                Special events include: {villa.specialEvents.join(", ")}
+                            </span>
+                        )}
+
+                        <div className="flex flex-wrap gap-1.5 space-y-1 mt-4">
                             {villa.amenities.map((item, index) => (
-                                <span className="bg-transparent w-fit border-1 text-sm text-[var(--color-secondary)] font-[var(--font-navigation)] border-[var(--color-primary)] rounded-xl py-1 px-2">
+                                <span key={index} className="bg-transparent w-fit border-1 text-sm text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2">
                                     {item}
                                 </span>
                             ))}
@@ -127,41 +174,68 @@ function VillaDetails() {
                 <hr className="border-t border-[var(--color-primary)] my-4" />
             </div>
             <div className="mt-10 space-y-6">
-                {loading ? (
-                    <div className="text-center">Loading images...</div>
-                ) : (
-                    <>
-                        <MasonryPhotoAlbum
-                            photos={displayedImages}
-                            targetRowHeight={150}
-                            onClick={({ index: current }) => setIndex(current)}
-                        />
-                        <Lightbox
-                            plugins={[Zoom, Thumbnails, Fullscreen]}
-                            index={index}
-                            slides={displayedImages}
-                            open={index >= 0}
-                            close={() => setIndex(-1)}
-                        />
-                        <div className="flex justify-center gap-4">
-                            {canLoadLess && (
-                                <button onClick={loadLess} className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer">
-                                    Show Less
-                                </button>
-                            )}
-                            {hasMore && (
-                                <span onClick={loadMore} className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer">
-                                    Show More
-                                </span>
-                            )}
-                        </div>
-                        <div className="text-center text-sm text-gray-500">
-                            Showing {displayedImages.length} of {processedImages.length} images
-                        </div>
-                    </>
-                )}
+                {loading ?
+                    (
+                        <div className="text-center">Loading images...</div>
+                    ) : (
+                        villa.villas.map((singleVilla, idx) => (
+                            <div key={idx}>
+                                {villa.numVillas > 1 && (
+                                    <h2 className="text-left font-header text-2xl mb-4">
+                                        Villa No. {singleVilla.villaNumber}
+                                    </h2>
+                                )}
+
+                                <MasonryPhotoAlbum
+                                    photos={displayedImages[singleVilla.villaNumber] || []}
+                                    targetRowHeight={150}
+                                    onClick={({ index: current }) => {
+                                        // Collect all images from ALL villas
+                                        const allVillaImages = villa.villas.flatMap(v =>
+                                            displayedImages[v.villaNumber] || []
+                                        );
+
+                                        setCurrentSlides(allVillaImages);
+
+                                        // Find the correct global index
+                                        const globalIndex = allVillaImages.findIndex(
+                                            img => img.publicId === displayedImages[singleVilla.villaNumber][current].publicId
+                                        );
+
+                                        setIndex(globalIndex);
+                                    }}
+                                />
+
+                                <div className="flex justify-center gap-4">
+                                    {!canLoadLess(singleVilla.villaNumber) && hasMore(singleVilla.villaNumber) && (
+                                        <span
+                                            onClick={() => loadMore(singleVilla.villaNumber)}
+                                            className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
+                                        >
+                                            Show More
+                                        </span>
+                                    )}
+                                    {canLoadLess(singleVilla.villaNumber) && (
+                                        <button
+                                            onClick={() => loadLess(singleVilla.villaNumber)}
+                                            className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
+                                        >
+                                            Show Less
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                        ))
+                    )}
+                <Lightbox
+                    plugins={[Zoom, Thumbnails, Fullscreen]}
+                    index={index}
+                    slides={currentSlides}
+                    open={index >= 0}
+                    close={() => setIndex(-1)}
+                />
             </div>
-        </div>
+        </div >
     );
 }
 

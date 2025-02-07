@@ -24,7 +24,7 @@ function AboutPreview() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-     
+
     return (
         <div>
             <h1 className="text-6xl text-center mt-20 mb-20 font-header">About Us</h1>
@@ -43,17 +43,12 @@ function AboutPreview() {
                     className={`w-1/2 flex flex-col justify-between transition-all duration-3000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
                         }`}
                 >
-                    <p className="text-left text-xl font-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mauris
-                        arcu, finibus quis pellentesque sit amet, vestibulum sit amet ante.
-                        Praesent eu commodo metus. Integer ac magna vitae odio dignissim
-                        facilisis eu nec metus. Pellentesque ultricies ante tristique malesuada
-                        congue. Fusce feugiat urna enim, eget hendrerit justo ornare eu.
-                        Vestibulum eu dolor ligula. Quisque in aliquam nulla. Praesent urna
-                        ligula, pulvinar in eros non, ullamcorper bibendum nulla. Donec
-                        ultricies feugiat nibh vel fringilla. Maecenas in ligula tempor,
-                        maximus diam eget, eleifend ipsum. Proin porta elit elit, nec venenatis
-                        quam venenatis sed.
+                    <p className="text-left text-xl font-body text-justify">
+                        At Serene Stays by Prasad Hospitality, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Goa, Mahabaleshwar, and Thailand.
+                        With over 20 years of experience in the hospitality industry, we have mastered the art of creating unforgettable stays tailored to your needs.
+                        Whether you are looking for a peaceful retreat, a family vacation, or a grand celebration, our properties offer the perfect setting.
+                        Each villa is thoughtfully designed with private pools, lush green lawns, and spacious interiors, ensuring a blend of opulence and relaxation.
+                        Our resort rooms provide a cozy yet elegant ambiance.
                     </p>
                     <div className="flex justify-end">
                         <Link to="/about"><button className="custom-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

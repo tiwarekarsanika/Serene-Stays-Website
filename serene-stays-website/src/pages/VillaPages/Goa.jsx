@@ -1,0 +1,21 @@
+import React from "react";
+import VillaCard from "../../components/VillaCard";
+import propertiesData from "../../data/properties.json";
+
+function Goa() {
+
+  const goaProperties = propertiesData.Goa.properties;
+
+  return (
+    <div className="m-20">
+      <h1 className="text-[var(--font-header)] text-5xl text-left">Select Your Ideal Stay</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {goaProperties.map((villa, index) => (
+          <VillaCard key={index} villa={villa} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Goa;

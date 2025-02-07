@@ -17,6 +17,7 @@
     "@mui/icons-material": "^6.4.2",
     "@tailwindcss/vite": "^4.0.0",
     "antd": "^5.23.2",
+    "framer-motion": "^12.4.1",
     "google-map-react": "^2.2.1",
     "lightgallery": "^2.8.2",
     "react": "^18.2.0",

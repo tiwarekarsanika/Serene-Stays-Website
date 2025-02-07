@@ -1,0 +1,235 @@
+{
+    "Virar": {
+        "properties": [
+            {
+                "name": "Villa Paradiso",
+                "location": "Virar",
+                "numVillas": 1,
+                "space": "4 bhk",
+                "amenities": [
+                    "Wifi",
+                    "Air Conditioner",
+                    "Parking",
+                    "Swimming Pool",
+                    "Lawn",
+                    "Balcony",
+                    "Generator Backup",
+                    "Veg Nonveg"
+                ],
+                "headerImg": "Wildernest-WebP/hy6i18dq7hezb0uxufpz",
+                "villas": [
+                    {
+                        "villaNumber": 1,
+                        "images": [
+                            "Wildernest-WebP/hy6i18dq7hezb0uxufpz",
+                            "Wildernest-WebP/odohlkztnbmyxv4expiq",
+                            "Wildernest-WebP/lzapufuslxuftzgysb1n",
+                            "Wildernest-WebP/nuzyrhf5rbrqnjf9osdz",
+                            "Wildernest-WebP/ffsgvbbtg8aq4cux5fj6",
+                            "Wildernest-WebP/dxhthqvvfs83xllmhypd",
+                            "Wildernest-WebP/vzqtghjmt2j6sj0qogt3",
+                            "Wildernest-WebP/rvmgqgyka7urjlfwnkhq",
+                            "Wildernest-WebP/gi8t9kwyfuu83ueo6fsm",
+                            "Wildernest-WebP/dhzsiqdobpzv3b6qltuy",
+                            "Wildernest-WebP/ujt8p1perxzbhuvwvrew",
+                            "Wildernest-WebP/q7yh6grsrelnnakaen13",
+                            "Wildernest-WebP/g3y14rdlc0hy8a8t04ms"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Casa De Flores Villa",
+                "location": "Virar",
+                "numVillas": 4,
+                "space": "4 bhk",
+                "amenities": [
+                    "Wifi",
+                    "Air Conditioner",
+                    "Parking",
+                    "Swimming Pool",
+                    "Lift Facility",
+                    "Generator Backup",
+                    "Veg Nonveg",
+                    "Barbecue",
+                    "Inhouse Speaker System"
+                ],
+                "occasions": [
+                    "Engagement",
+                    "Birthday Party",
+                    "Anniversary",
+                    "Sangeets",
+                    "Bachelorette"
+                ],
+                "specialEvents": [
+                    "Ghazal Night",
+                    "Karaoke Night"
+                ],
+                "headerImg": "IMG_0001_gbk0di",
+                "villas": [
+                    {
+                        "villaNumber": 9,
+                        "images": [
+                            "CasaVilla9-WebP/bxpygh8jmylq8jdlh3zg",
+                            "CasaVilla9-WebP/zh0u2xdbyyxtvfy8uqhx",
+                            "CasaVilla9-WebP/bfyi9wzeiiesonpktirw",
+                            "CasaVilla9-WebP/byucdfw3hhevxqdxzzeq",
+                            "CasaVilla9-WebP/spgtplccvr6ksxewapbw",
+                            "CasaVilla9-WebP/tfrpirxo0ou63gskebnt",
+                            "CasaVilla9-WebP/aks3geloj2oil532w9yc",
+                            "CasaVilla9-WebP/w1udswecm6r2lavwhg9z",
+                            "CasaVilla9-WebP/wksse2qf3mur1mv4e41q",
+                            "CasaVilla9-WebP/tlh3qxibk0dd0abputym",
+                            "CasaVilla9-WebP/lymctf2uyevhgzrjrvq3",
+                            "CasaVilla9-WebP/t3q3qseinz7wifccdsyn",
+                            "CasaVilla9-WebP/amtrjhfeq7wdzyzub6ku",
+                            "CasaVilla9-WebP/bbukjicmjhxfwqde645r",
+                            "CasaVilla9-WebP/bqljxbpx0dsxhho5ooos",
+                            "CasaVilla9-WebP/ir0xrcgn35c5kvrftrbu",
+                            "CasaVilla9-WebP/pfcw7txqqinbdusbcn5a",
+                            "CasaVilla9-WebP/uvq6wo7qwxkvoeoeo6y9",
+                            "CasaVilla9-WebP/euzaq8yzzjcln1odocsm",
+                            "CasaVilla9-WebP/je5gl1bhhkdcbpl8qhq7"
+                        ]
+                    },
+                    {
+                        "villaNumber": 10,
+                        "images": [
+                            "CasaVilla10-WebP/aylzhrqwiw3uohg9im7q",
+                            "CasaVilla10-WebP/se8xbz5jjv7v8hwoq84w",
+                            "CasaVilla10-WebP/wfvfz4quapcvhugrchjs",
+                            "CasaVilla10-WebP/qthzxafxiopyfauvdpcy",
+                            "CasaVilla10-WebP/vu4zfay9oeczlowegw6n",
+                            "CasaVilla10-WebP/uddche4b5q96keuhahwk",
+                            "CasaVilla10-WebP/jytcbrsb6o3twsiygyew",
+                            "CasaVilla10-WebP/acgrbfpsbbyb2ffbarze",
+                            "CasaVilla10-WebP/li7tetgocn499huuywrt",
+                            "CasaVilla10-WebP/liwa8lmf2l6yztjtoyrg",
+                            "CasaVilla10-WebP/buhpzldjzqe9ep8ve9re",
+                            "CasaVilla10-WebP/majcuj7dy25ia4lhowmk",
+                            "CasaVilla10-WebP/ni05tsikdj0uewht2is3",
+                            "CasaVilla10-WebP/l3jxpl8nqqo8jgbpcffx",
+                            "CasaVilla10-WebP/ckwt68u8hy7awbwdgnoy"
+                        ]
+                    },
+                    {
+                        "villaNumber": 11,
+                        "images": [
+                            "CasaVilla11-WebP/ppggsve90svfktjhs2ds",
+                            "CasaVilla11-WebP/y5lelpvfacc6zkd75tko",
+                            "CasaVilla11-WebP/x5rvttyjpz6ifih6k0yy",
+                            "CasaVilla11-WebP/h31pww0cpxcuzbc829la",
+                            "CasaVilla11-WebP/is0ajiqwypyxwybqpnqv",
+                            "CasaVilla11-WebP/q5qrrhtmdwbtxbsefjdd",
+                            "CasaVilla11-WebP/u5r2pp6abkzqmbfih7fp",
+                            "CasaVilla11-WebP/yihjiif6bxvmay3i4egr",
+                            "CasaVilla11-WebP/jbtppksaahu0thswify7",
+                            "CasaVilla11-WebP/z5hd9cfcrpebikrcozci",
+                            "CasaVilla11-WebP/pmyiq7yzmoyuewex6x3z"
+                        ]
+                    },
+                    {
+                        "villaNumber": 12,
+                        "images": [
+                            "CasaVilla12-WebP/hg1qysmtlhmkaohwnivn",
+                            "CasaVilla12-WebP/rgpgeol5omzb122hlv84",
+                            "CasaVilla12-WebP/hj9zcmjxtsb3xzur3gqq",
+                            "CasaVilla12-WebP/d1cxdzkgpz29mwbnxeje",
+                            "CasaVilla12-WebP/j30gungaal3npq5rjnfc",
+                            "CasaVilla12-WebP/s0tv7jn6n9eac8hwyuc9",
+                            "CasaVilla12-WebP/llnej9vyc1ixcbr5wgde",
+                            "CasaVilla12-WebP/kchspsjrqphxjs3w9bpf",
+                            "CasaVilla12-WebP/voscpv5yakj6uqgueh5v",
+                            "CasaVilla12-WebP/vfi0fthqfiom6r2bjluz",
+                            "CasaVilla12-WebP/i4oa3wucwxzqn2flptkk",
+                            "CasaVilla12-WebP/zexlwjdvl3rn1tzo0tan",
+                            "CasaVilla12-WebP/jptownu3kl59dnus4ng4",
+                            "CasaVilla12-WebP/pzh9c7lpnl29cqnhg5ok",
+                            "CasaVilla12-WebP/fu2zwljm1fmj2kk8pdul",
+                            "CasaVilla12-WebP/n2dzflxeek6avgi5orxt",
+                            "CasaVilla12-WebP/ozng39bh6azcqgrsntew",
+                            "CasaVilla12-WebP/ujbhdefgxof73cpeyfpq",
+                            "CasaVilla12-WebP/eeliplb2fbwlmdyxh22b"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Goa": {
+        "properties": [
+            {
+                "name": "SinQ Beach Resort",
+                "location": "Goa",
+                "numRooms": 62,
+                "hotspots": [
+                    "300m from Calangute Beach"
+                ],
+                "headerImg": "SinQ-WebP/dtrhk8frpodmwldpkrxh",
+                "villas": [
+                    {
+                        "villaNumber": 1,
+                        "images": [
+                            "SinQ-WebP/sjuzessk4srnmprq5nzm",
+                            "SinQ-WebP/aawehdzirxynyevc27d6",
+                            "SinQ-WebP/osktaxvluzo70wkkww8r",
+                            "SinQ-WebP/iwwappiczmmc4v0x0mgd",
+                            "SinQ-WebP/dtrhk8frpodmwldpkrxh",
+                            "SinQ-WebP/roo3odrxb5xrmmkzbfn8",
+                            "SinQ-WebP/iz6h3t2m5orpgskxixmp",
+                            "SinQ-WebP/phy5m4lf1slaowsfph5a",
+                            "SinQ-WebP/qx1ybfnjekipwahtyh5m",
+                            "SinQ-WebP/an1my1eb4fj1xjfh3n3w",
+                            "SinQ-WebP/b8l3ifptrnpybqoajml5"
+                        ]
+                    }
+                ],
+                "amenities": [
+                    "Wifi",
+                    "Air Conditioner",
+                    "Parking",
+                    "Swimming Pool",
+                    "Veg Nonveg"
+                ]
+            }
+        ]
+    },
+    "Mahabaleshwar": {
+        "properties": [
+            {
+                "name": "Fogg Heaven Villa",
+                "location": "Mahabaleshwar",
+                "numVillas": 1,
+                "space": "5 bhk",
+                "amenities": [
+                    "Valley View",
+                    "Wifi",
+                    "Air Conditioner",
+                    "Parking",
+                    "Swimming Pool",
+                    "Lawn",
+                    "Dining Area",
+                    "Balcony",
+                    "Veg Nonveg",
+                    "Generator Backup",
+                    "Barbecue"
+                ],
+                "hotspots": [
+                    "1km from Mahabaleshwar Market",
+                    "3km from Mapro Garden"
+                ]
+            }
+        ]
+    },
+    "Thailand": {
+        "properties": [
+            {
+                "name": "Cozy Resort",
+                "location": "Thailand",
+                "hotspots": [
+                    "near Marina Beach"
+                ]
+            }
+        ]
+    }
+}
