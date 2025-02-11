@@ -9,6 +9,7 @@ import About from './pages/About'
 import PolicyPage from './pages/PolicyPage'
 import Contact from './pages/Contact'
 import Goa from './pages/VillaPages/Goa'
+import Mahabaleshwar from './pages/VillaPages/Mahabaleshwar'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/virar" element={<Virar />} />
             <Route path="/goa" element={<Goa />} />
+            <Route path="/mahabaleshwar" element={<Mahabaleshwar />} />
           </Routes>
         </div>
         <Footer />

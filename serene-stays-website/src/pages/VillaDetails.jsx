@@ -48,13 +48,14 @@ function VillaDetails() {
         }
     };
 
+    // Need Image Dimensions for the Photo Album component
     const getImageDimensions = (publicId) => {
         return new Promise((resolve, reject) => {
             const img = new Image();
             const url = getCloudinaryUrl(publicId);
 
             img.onload = () => {
-                console.log("Loaded image:", url);
+                // console.log("Loaded image:", url);
                 resolve({
                     src: url,
                     width: img.width,
@@ -72,37 +73,38 @@ function VillaDetails() {
         });
     };
 
+    //Loading the gallery images
     React.useEffect(() => {
         const loadImages = async () => {
             setLoading(true);
             let allProcessedImages = {};
-    
+
             for (let singleVilla of villa.villas) {
                 const safeImages = singleVilla.images || [];
                 console.log(`Total images for Villa ${singleVilla.villaNumber}:`, safeImages.length);
-    
+
                 const imagesWithDimensions = await Promise.all(
                     safeImages.map(publicId => getImageDimensions(publicId))
                 );
-    
+
                 allProcessedImages[singleVilla.villaNumber] = imagesWithDimensions;
             }
-    
+
             setProcessedImages(allProcessedImages);
-            
+
             // Initial display logic
             const initialDisplay = {};
             Object.keys(allProcessedImages).forEach(villaNumber => {
                 initialDisplay[villaNumber] = allProcessedImages[villaNumber].slice(0, initialLoadCount);
             });
-            
+
             setDisplayedImages(initialDisplay);
             setLoading(false);
         };
-    
+
         loadImages();
     }, [villa.villas, location.state]);
-    
+
     const loadMore = (villaNumber) => {
         setDisplayedImages(prev => ({
             ...prev,
@@ -127,6 +129,7 @@ function VillaDetails() {
         <div className="p-20">
             <div className="flex flex-col justify-between">
                 <div className="flex flex-row justify between gap-4">
+                    {/* Display the header image */}
                     <AdvancedImage
                         cldImg={headerImage}
                         className="w-80 h-60 object-fill"
@@ -145,23 +148,25 @@ function VillaDetails() {
                                 <span>{villa.numRooms} Rooms</span>
                             )}
                         </div>
+                        {/* Display hotspots if available */}
                         {villa.hotspots?.length > 0 && (
                             <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
                                 Property is located {villa.hotspots.join(", ")}
                             </span>
                         )}
+                        {/* Display occasions if available */}
                         {villa.occasions?.length > 0 && (
                             <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
                                 Perfect for all occasions like {villa.occasions.join(", ")}
                             </span>
                         )}
-
+                        {/* Display special events if available */}
                         {villa.specialEvents?.length > 0 && (
                             <span className="text-[var(--color-text)] font-[var(--font-navigation)] italic">
                                 Special events include: {villa.specialEvents.join(", ")}
                             </span>
                         )}
-
+                        {/* Display amenities */}
                         <div className="flex flex-wrap gap-1.5 space-y-1 mt-4">
                             {villa.amenities.map((item, index) => (
                                 <span key={index} className="bg-transparent w-fit border-1 text-sm text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2">
@@ -185,7 +190,7 @@ function VillaDetails() {
                                         Villa No. {singleVilla.villaNumber}
                                     </h2>
                                 )}
-
+                                {/* Display the photo album */}
                                 <MasonryPhotoAlbum
                                     photos={displayedImages[singleVilla.villaNumber] || []}
                                     targetRowHeight={150}
@@ -194,19 +199,16 @@ function VillaDetails() {
                                         const allVillaImages = villa.villas.flatMap(v =>
                                             displayedImages[v.villaNumber] || []
                                         );
-
                                         setCurrentSlides(allVillaImages);
-
                                         // Find the correct global index
                                         const globalIndex = allVillaImages.findIndex(
                                             img => img.publicId === displayedImages[singleVilla.villaNumber][current].publicId
                                         );
-
                                         setIndex(globalIndex);
                                     }}
                                 />
-
                                 <div className="flex justify-center gap-4">
+                                    {/* Show more/less buttons */}
                                     {!canLoadLess(singleVilla.villaNumber) && hasMore(singleVilla.villaNumber) && (
                                         <span
                                             onClick={() => loadMore(singleVilla.villaNumber)}
@@ -227,6 +229,7 @@ function VillaDetails() {
                             </div>
                         ))
                     )}
+                {/* Lightbox for image viewing */}
                 <Lightbox
                     plugins={[Zoom, Thumbnails, Fullscreen]}
                     index={index}
@@ -235,7 +238,26 @@ function VillaDetails() {
                     close={() => setIndex(-1)}
                 />
             </div>
-        </div >
+            <hr className="border-t border-[var(--color-primary)] my-4" />
+            <div>
+                <div className="flex flex-row gap-10">
+                    {/* Google Maps iframe */}
+                    <iframe
+                        src={villa.gmaps}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="h-50 w-100"
+                    />
+                    <div>
+                        <h2 className="text-3xl text-left">Spot the Location on Map</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 

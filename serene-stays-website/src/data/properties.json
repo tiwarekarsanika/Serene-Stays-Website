@@ -4,6 +4,7 @@
             {
                 "name": "Villa Paradiso",
                 "location": "Virar",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.723977597288!2d72.91720959999999!3d19.5534604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be70980abe85a1d%3A0xfb18b62c263ad608!2sParadiso%20Villa!5e0!3m2!1sen!2sin!4v1739289389767!5m2!1sen!2sin",
                 "numVillas": 1,
                 "space": "4 bhk",
                 "amenities": [
@@ -41,6 +42,7 @@
             {
                 "name": "Casa De Flores Villa",
                 "location": "Virar",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.164447567988!2d72.9266526!3d19.491559499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a72492cf0e6b%3A0x2012c3296ada1c0d!2sCasa%20De%20Flores%20Luxury%20Villa%E2%80%99s%20%40%20Vaitarna%2C%20Builders%20%26%20Developers!5e0!3m2!1sen!2sin!4v1739289774307!5m2!1sen!2sin",
                 "numVillas": 4,
                 "space": "4 bhk",
                 "amenities": [
@@ -161,6 +163,7 @@
             {
                 "name": "SinQ Beach Resort",
                 "location": "Goa",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.0204873425187!2d73.7628398!3d15.5370324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc7002be2e405%3A0x4a36ad80481d8b0b!2sSinq%20Beach%20Resort!5e0!3m2!1sen!2sin!4v1739289901327!5m2!1sen!2sin",
                 "numRooms": 62,
                 "hotspots": [
                     "300m from Calangute Beach"
@@ -199,6 +202,7 @@
             {
                 "name": "Fogg Heaven Villa",
                 "location": "Mahabaleshwar",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.219334830351!2d73.715077!3d17.921920999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2650032991571%3A0x7c6d0300eb29f62c!2sFogg%20Heaven%20Villa!5e0!3m2!1sen!2sin!4v1739289842116!5m2!1sen!2sin",
                 "numVillas": 1,
                 "space": "5 bhk",
                 "amenities": [
@@ -217,6 +221,36 @@
                 "hotspots": [
                     "1km from Mahabaleshwar Market",
                     "3km from Mapro Garden"
+                ],
+                "headerImg": "FoggHeaven-WebP/ylryceiutugl13u6safw",
+                "villas": [
+                    {
+                        "villaNumber": 1,
+                        "images": [
+                            "FoggHeaven-WebP/dvwva2m0f3lt9akjsya2",
+                            "FoggHeaven-WebP/dwd3nkq5slb2dikrq09a",
+                            "FoggHeaven-WebP/o6hylciv57skuzqg754o",
+                            "FoggHeaven-WebP/wkg09nagw073qtepheqx",
+                            "FoggHeaven-WebP/qmalte8fqpiizokv91pk",
+                            "FoggHeaven-WebP/p91m4hvej1nfxeenvlv3",
+                            "FoggHeaven-WebP/wid2fswgsuhcbvoe53dw",
+                            "FoggHeaven-WebP/raxa88mymtajqs7mgrvg",
+                            "FoggHeaven-WebP/oac2jso0xk5ppf5rwzhn",
+                            "FoggHeaven-WebP/wtujkunevwolm9neufni",
+                            "FoggHeaven-WebP/qj84r0sudlfsfwtc0trs",
+                            "FoggHeaven-WebP/ylryceiutugl13u6safw",
+                            "FoggHeaven-WebP/zcvr70mt0nyw4hqie1co",
+                            "FoggHeaven-WebP/pqxa7mwcrwq8nx79aoqr",
+                            "FoggHeaven-WebP/eyaxdvqsmnvbl4ntqhpl",
+                            "FoggHeaven-WebP/ll5f1n4rc6bnfhdgphmv",
+                            "FoggHeaven-WebP/l9vs2wyvezsaczolsvjf",
+                            "FoggHeaven-WebP/pivecash3fjwekboctgx",
+                            "FoggHeaven-WebP/ziqzibk37zu9jns6b2ta",
+                            "FoggHeaven-WebP/rg3fc3mnydbqusm7dnjk",
+                            "FoggHeaven-WebP/nqrfg3rbluhi8hlywsf2",
+                            "FoggHeaven-WebP/kzxd1hega3sdebycanwv"
+                        ]
+                    }
                 ]
             }
         ]

@@ -9,29 +9,31 @@ function Footer() {
 
     return (
         <div className="mb-4 bg-black pt-4 pl-6 pr-6">
-            <div className="flex flex-col md:flex-row justify-between mb-6">
-                <div className="flex flex-col pl-12 items-start gap-4">
+            <div>
+                <div className="flex flex-col pl-12 gap-4">
                     <div className="flex flex-row items-center space-x-6 mt-6">
-                        <img src={logo} alt="Serene Stays Logo" className="w-20 h-20 rounded-full" />
+                        <img src={logo} alt="Serene Stays Logo" className="w-15 h-15 rounded-full" />
                         <h1 className="text-4xl font-bold">Serene Stays</h1>
                     </div>
-                    <div className="mt-4 flex flex-row space-x-4 justify-center items-center">
-                        <Link to="https://www.instagram.com/_serenestays_" target="_blank">
-                            <InstagramIcon className={`text-2.5rem cursor-pointer ${hover ? "text-[var(--color-primary)]" : "text-white"}`}
-                                onMouseEnter={() => setHover(true)}
-                                onMouseLeave={() => setHover(false)}
-                                sx={{ fontSize: 40 }}
-                            /></Link>
-                        <span className="text-xl font-body">Lets Stay Connected !</span>
-                    </div>
-                    <div className="mt-10 flex flex-row space-x-8 font-navigation">
-                        <Link to="/about"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</span></Link>
-                        <Link to="/contact"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</span></Link>
-                        <Link to="/policypage"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >FAQs & Booking Policy</span></Link>
+                    <div className="flex flex-row justify-between items-center">
+                        <div className="flex flex-row space-x-4 justify-center items-center">
+                            <Link to="https://www.instagram.com/_serenestays_" target="_blank">
+                                <InstagramIcon className={`text-2.5rem cursor-pointer ${hover ? "text-[var(--color-primary)]" : "text-white"}`}
+                                    onMouseEnter={() => setHover(true)}
+                                    onMouseLeave={() => setHover(false)}
+                                    sx={{ fontSize: 40 }}
+                                /></Link>
+                            <span className="text-xl font-body">Lets Stay Connected !</span>
+                        </div>
+                        <div className="flex flex-row space-x-8 font-navigation pr-12">
+                            <Link to="/about"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About</span></Link>
+                            <Link to="/contact"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</span></Link>
+                            <Link to="/policypage"><span className="cursor-pointer hover:text-[var(--color-primary)]" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >FAQs & Booking Policy</span></Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className="flex flex-row justify-around space-x-6 pr-12">
+                {/* <div className="flex flex-row justify-around space-x-6 pr-12">
                     <div className="h-50 w-100">
                         <div className="text-2xl font-header mb-4 text-left">Find Us Here !</div>
                         <iframe
@@ -44,12 +46,12 @@ function Footer() {
                             referrerPolicy="no-referrer-when-downgrade"
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <hr className="border-t border-[var(--color-primary)] my-4" />
             <div className="text-center font-navigation pb-4 text-[var(--color-primary)]">
-                Copyright <CopyrightIcon className="inline-block text-sm" /> 2024 Serene Stays | Made with ❤ by Sanika
+                Copyright <CopyrightIcon className="inline-block text-sm" /> 2025 Serene Stays | Made with ❤ by Sanika
             </div>
         </div>
     );

@@ -35,11 +35,6 @@ function USPs() {
             title: "Rich Heritage in Hospitality",
             description: "With 20 years of experience in hospitality, our team ensures handles every detail of your stay with care & precision.",
             icon: <HomeIcon />
-        },
-        {
-            title: "Flexible Cancellation Policies",
-            description: "We understand the importance of flexibility. Our hassle-free cancellation policies help you adjust your plans with ease.",
-            icon: <PolicyIcon />
         }
     ];
 

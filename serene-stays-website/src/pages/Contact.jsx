@@ -36,7 +36,7 @@ const Contact = () => {
 
     // Sending the form data to the web3forms API
     const form = new FormData();
-    form.append("access_key", "9c68c1d1-cf5b-4369-a769-efe4e1865872");
+    form.append("access_key", "3f14351c-c160-454d-8c19-0c2a16b9ec83");
     form.append("name", formData.name);
     form.append("phone", formData.phone);
     form.append("email", formData.email);
@@ -90,7 +90,7 @@ const Contact = () => {
            </div>
            <div>
              <p className="text-xl font-body text-left text-[var(--color-text)]">Phone Number</p>
-             <p className="font-body text-left">+91 97690 95698</p>
+             <p className="font-body text-left">+91 98201 16789</p>
            </div>
          </div>
 
@@ -100,11 +100,11 @@ const Contact = () => {
            </div>
            <div>
              <p className="text-xl font-body text-left text-[var(--color-text)]">Email Address</p>
-             <p className="font-body text-left">contact@example.com</p>
+             <p className="font-body text-left">prasadraorane173@gmail.com</p>
            </div>
          </div>
 
-         <div className="flex items-center gap-4">
+         {/* <div className="flex items-center gap-4">
            <div className="flex items-center justify-center">
              <LocationOnIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
           </div>
@@ -112,7 +112,7 @@ const Contact = () => {
              <p className="text-xl font-body text-left text-[var(--color-text)]">Location</p>
              <p className="font-body text-left">123 Business Avenue, Suite 100</p>
            </div>
-         </div>
+         </div> */}
 
          <div className="flex items-center gap-4">
             <div className="flex items-center justify-center">
@@ -120,7 +120,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-xl font-body text-left text-[var(--color-text)]">Business Hours</p>
-              <p className="font-body text-left">Mon - Fri: 9:00 AM - 5:00 PM</p>
+              <p className="font-body text-left">Mon - Sun: 10:00 AM - 10:00 PM</p>
             </div>
         </div>
         </div>

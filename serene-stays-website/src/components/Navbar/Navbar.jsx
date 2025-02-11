@@ -15,9 +15,9 @@ function Navbar() {
                 <nav>
                     <ul className="flex flex-row space-x-6 text-xl font-header">
                         <li className="cursor-pointer hover:text-[rgb(244,178,154)]" ><Link to="/virar">Virar</Link></li>
-                        <li className="cursor-pointer hover:text-[rgb(244,178,154)]" >Mahabaleshwar</li>
+                        <li className="cursor-pointer hover:text-[rgb(244,178,154)]" ><Link to="/mahabaleshwar">Mahabaleshwar</Link></li>
                         <li className="cursor-pointer hover:text-[rgb(244,178,154)]" ><Link to="/goa">Goa</Link></li>
-                        <li className="cursor-pointer hover:text-[rgb(244,178,154)]" >Thailand</li>
+                        {/* <li className="cursor-pointer hover:text-[rgb(244,178,154)]" >Thailand</li> */}
 
                     </ul>
                 </nav>
