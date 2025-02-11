@@ -7,13 +7,14 @@ function AboutPreview() {
 
     const handleScroll = () => {
         const element = document.getElementById("about-preview-section");
+        if (!element) return;
+
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
         if (elementTop < windowHeight * 0.75) {
             setIsVisible(true);
-        }
-        else {
+        } else {
             setIsVisible(false);
         }
     };
@@ -26,34 +27,54 @@ function AboutPreview() {
     }, []);
 
     return (
-        <div>
-            <h1 className="text-6xl text-center mt-20 mb-20 font-header">About Us</h1>
-            <div id="about-preview-section" className="flex flex-row items-center justify-center mx-20 space-x-6">
-                <div
-                    className={`w-1/2 h-full transition-all duration-3000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
-                        }`}
+        <div className="px-4 md:px-10 lg:px-20">
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-center mt-12 md:mt-20 mb-10 font-header">
+                About Us
+            </h1>
+
+            {/* Content Section */}
+            <div 
+                id="about-preview-section"
+                className="flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-6"
+            >
+                {/* Image Section */}
+                <div 
+                    className={`w-full md:w-1/2 transition-all duration-1000 ease-in-out ${
+                        isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                    }`}
                 >
-                    <img
-                        src={img2}
-                        alt="About Us"
-                        className="w-full h-full object-contain"
+                    <img 
+                        src={img2} 
+                        alt="About Us" 
+                        className="w-full h-auto object-contain rounded-lg shadow-lg"
                     />
                 </div>
-                <div
-                    className={`w-1/2 flex flex-col justify-between transition-all duration-3000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
-                        }`}
+
+                {/* Text Content Section */}
+                <div 
+                    className={`w-full md:w-1/2 flex flex-col space-y-6 transition-all duration-1000 ease-in-out ${
+                        isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                    }`}
                 >
-                    <p className="text-left text-xl font-body text-justify">
+                    <p className="text-lg md:text-xl text-justify font-body leading-relaxed">
                         At Serene Stays by Prasad Hospitality, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Goa, Mahabaleshwar, and Thailand.
                         With over 20 years of experience in the hospitality industry, we have mastered the art of creating unforgettable stays tailored to your needs.
                         Whether you are looking for a peaceful retreat, a family vacation, or a grand celebration, our properties offer the perfect setting.
                         Each villa is thoughtfully designed with private pools, lush green lawns, and spacious interiors, ensuring a blend of opulence and relaxation.
                         Our resort rooms provide a cozy yet elegant ambiance.
                     </p>
-                    <div className="flex justify-end">
-                        <Link to="/about"><button className="custom-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                            Read More
-                        </button></Link>
+
+                    {/* Button */}
+                    <div className="flex justify-center md:justify-end">
+                        <Link to="/about">
+                            <button 
+                                className="custom-button"
+                                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                            >
+                                Read More
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -62,5 +83,4 @@ function AboutPreview() {
 }
 
 export default AboutPreview;
-
 

@@ -3,9 +3,12 @@
 :root {
   height: 100%;
   width: 100%;
+  /* margin: 0 auto;
+  flex-wrap: wrap;
+  overflow-x: hidden; */
 
-  --font-header: 'Cormorant Garamond', serif;  
-  --font-body: 'Ovo', serif;               
+  --font-header: 'Cormorant Garamond', serif;
+  --font-body: 'Ovo', serif;
   --font-navigation: 'Poppins', sans-serif;
 
   --color-text: #ffffff;
@@ -13,7 +16,7 @@
   /* --color-background: #0a1a19; */
   --color-secondary: #fed6be;
   --color-primary: #f4b29a;
-  --color-accent: #82e8c9;
+  --color-accent: #82e8c9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +31,7 @@
 .font-body {
   font-family: var(--font-body);
 }
+
 .font-navigation {
   font-family: var(--font-navigation);
 }
@@ -37,8 +41,10 @@
   color: var(--color-secondary);
   font-family: var(--font-navigation);
   border: 1px solid var(--color-primary);
-  border-radius: 0.75rem; /* equivalent to rounded-xl */
-  padding: 0.5rem 1rem; /* equivalent to px-4 py-2 */
+  border-radius: 0.75rem;
+  /* equivalent to rounded-xl */
+  padding: 0.5rem 1rem;
+  /* equivalent to px-4 py-2 */
   cursor: pointer;
 }
 
@@ -62,9 +68,11 @@ body {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

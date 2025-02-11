@@ -13,20 +13,20 @@ function VillaCard({ villa }) {
     });
 
     const headerImage = cld.image(villa.headerImg)
-        .resize(fill().width(800).height(600))
-        .quality("auto:best")
+        .resize(fill().width(900).height(700))
+        .quality("auto:best");
 
     return (
-        <div className="flex flex-col justify-between border-1 border-[var(--color-primary)] rounded-xl p-8 text-left m-10 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-105 hover:z-10">
-            <div className="flex flex-col gap-4 mb-6">
+        <div className="w-full border border-[var(--color-primary)] rounded-xl p-4 md:p-5 text-left mt-2 md:mt-4 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-105 hover:z-5">
+            <div className="flex flex-col gap-2 md:gap-3 mb-3 md:mb-5">
                 <AdvancedImage
                     cldImg={headerImage}
-                    className="w-full h-full object-cover"
+                    className="w-full h-[250px] md:h-[350px] lg:h-[450px] object-cover rounded-lg"
                 />
                 <div>
-                    <h1 className="font-header text-3xl inline-block">{villa.name}</h1>
+                    <h1 className="font-header text-2xl md:text-3xl">{villa.name}</h1>
                 </div>
-                <div className="text-left font-body text-xl">
+                <div className="text-left font-body text-sm md:text-lg">
                     {villa.numVillas ? (
                         <>
                             <span>{villa.numVillas} {villa.numVillas > 1 ? "villas" : "villa"} | </span>
@@ -36,9 +36,9 @@ function VillaCard({ villa }) {
                         <span>{villa.numRooms} Rooms</span>
                     )}
                 </div>
-                <div className="flex flex-wrap gap-1.5 space-y-1">
+                <div className="flex flex-wrap gap-2">
                     {villa.amenities.map((item, index) => (
-                        <span key={index} className="text-sm bg-transparent w-fit border-1 text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2">
+                        <span key={index} className="text-xs md:text-sm bg-transparent border border-[var(--color-primary)] text-[var(--color-secondary)] font-navigation rounded-xl py-1 px-3">
                             {item}
                         </span>
                     ))}
@@ -46,10 +46,14 @@ function VillaCard({ villa }) {
             </div>
             <Link to={`/${villa.location.toLowerCase()}/villa-details`} state={{ villa }}>
                 <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="flex-end cursor-pointer hover:text-[var(--color-primary)]" >Image Gallery & More Details <KeyboardDoubleArrowRightIcon /> </div>
+                    className="flex items-center gap-2 cursor-pointer text-sm md:text-base hover:text-[var(--color-primary)]">
+                    Image Gallery & More Details <KeyboardDoubleArrowRightIcon fontSize="small" />
+                </div>
             </Link>
         </div>
     );
 }
 
 export default VillaCard;
+
+

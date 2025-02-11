@@ -125,20 +125,157 @@ function VillaDetails() {
     const canLoadLess = (villaNumber) =>
         displayedImages[villaNumber]?.length > initialLoadCount;
 
+    // return (
+    //     <div className="p-20">
+    //         <div className="flex flex-col justify-between">
+    //             <div className="flex flex-row justify between gap-4">
+    //                 {/* Display the header image */}
+    //                 <AdvancedImage
+    //                     cldImg={headerImage}
+    //                     className="w-80 h-60 object-fill"
+    //                 />
+    //                 <div className="text-left flex flex-col gap-2">
+    //                     <div>
+    //                         <h1 className="text-[var(--font-header)] text-3xl inline-block">{villa.name}</h1>
+    //                     </div>
+    //                     <div className="text-left font-body text-xl">
+    //                         {villa.numVillas ? (
+    //                             <>
+    //                                 <span>{villa.numVillas} {villa.numVillas > 1 ? "villas" : "villa"} | </span>
+    //                                 <span>{villa.space} {villa.numVillas > 1 ? "each" : ""}</span>
+    //                             </>
+    //                         ) : (
+    //                             <span>{villa.numRooms} Rooms</span>
+    //                         )}
+    //                     </div>
+    //                     {/* Display hotspots if available */}
+    //                     {villa.hotspots?.length > 0 && (
+    //                         <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+    //                             Property is located {villa.hotspots.join(", ")}
+    //                         </span>
+    //                     )}
+    //                     {/* Display occasions if available */}
+    //                     {villa.occasions?.length > 0 && (
+    //                         <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+    //                             Perfect for all occasions like {villa.occasions.join(", ")}
+    //                         </span>
+    //                     )}
+    //                     {/* Display special events if available */}
+    //                     {villa.specialEvents?.length > 0 && (
+    //                         <span className="text-[var(--color-text)] font-[var(--font-navigation)] italic">
+    //                             Special events include: {villa.specialEvents.join(", ")}
+    //                         </span>
+    //                     )}
+    //                     {/* Display amenities */}
+    //                     <div className="flex flex-wrap gap-1.5 space-y-1 mt-4">
+    //                         {villa.amenities.map((item, index) => (
+    //                             <span key={index} className="bg-transparent w-fit border-1 text-sm text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2">
+    //                                 {item}
+    //                             </span>
+    //                         ))}
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //             <hr className="border-t border-[var(--color-primary)] my-4" />
+    //         </div>
+    //         <div className="mt-10 space-y-6">
+    //             {loading ?
+    //                 (
+    //                     <div className="text-center">Loading images...</div>
+    //                 ) : (
+    //                     villa.villas.map((singleVilla, idx) => (
+    //                         <div key={idx}>
+    //                             {villa.numVillas > 1 && (
+    //                                 <h2 className="text-left font-header text-2xl mb-4">
+    //                                     Villa No. {singleVilla.villaNumber}
+    //                                 </h2>
+    //                             )}
+    //                             {/* Display the photo album */}
+    //                             <MasonryPhotoAlbum
+    //                                 photos={displayedImages[singleVilla.villaNumber] || []}
+    //                                 targetRowHeight={150}
+    //                                 onClick={({ index: current }) => {
+    //                                     // Collect all images from ALL villas
+    //                                     const allVillaImages = villa.villas.flatMap(v =>
+    //                                         displayedImages[v.villaNumber] || []
+    //                                     );
+    //                                     setCurrentSlides(allVillaImages);
+    //                                     // Find the correct global index
+    //                                     const globalIndex = allVillaImages.findIndex(
+    //                                         img => img.publicId === displayedImages[singleVilla.villaNumber][current].publicId
+    //                                     );
+    //                                     setIndex(globalIndex);
+    //                                 }}
+    //                             />
+    //                             <div className="flex justify-center gap-4">
+    //                                 {/* Show more/less buttons */}
+    //                                 {!canLoadLess(singleVilla.villaNumber) && hasMore(singleVilla.villaNumber) && (
+    //                                     <span
+    //                                         onClick={() => loadMore(singleVilla.villaNumber)}
+    //                                         className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
+    //                                     >
+    //                                         Show More
+    //                                     </span>
+    //                                 )}
+    //                                 {canLoadLess(singleVilla.villaNumber) && (
+    //                                     <button
+    //                                         onClick={() => loadLess(singleVilla.villaNumber)}
+    //                                         className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
+    //                                     >
+    //                                         Show Less
+    //                                     </button>
+    //                                 )}
+    //                             </div>
+    //                         </div>
+    //                     ))
+    //                 )}
+    //             {/* Lightbox for image viewing */}
+    //             <Lightbox
+    //                 plugins={[Zoom, Thumbnails, Fullscreen]}
+    //                 index={index}
+    //                 slides={currentSlides}
+    //                 open={index >= 0}
+    //                 close={() => setIndex(-1)}
+    //             />
+    //         </div>
+    //         <hr className="border-t border-[var(--color-primary)] my-4" />
+    //         <div>
+    //             <div className="flex flex-row gap-10">
+    //                 {/* Google Maps iframe */}
+    //                 <iframe
+    //                     src={villa.gmaps}
+    //                     width="100%"
+    //                     height="100%"
+    //                     style={{ border: 0 }}
+    //                     allowFullScreen=""
+    //                     loading="lazy"
+    //                     referrerPolicy="no-referrer-when-downgrade"
+    //                     className="h-50 w-100"
+    //                 />
+    //                 <div>
+    //                     <h2 className="text-3xl text-left">Spot the Location on Map</h2>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
+
     return (
-        <div className="p-20">
+        <div className="p-4 md:p-8 lg:p-20">
             <div className="flex flex-col justify-between">
-                <div className="flex flex-row justify between gap-4">
-                    {/* Display the header image */}
+                <div className="flex flex-col md:flex-row justify-between gap-4">
+                    {/* Header image - responsive width */}
                     <AdvancedImage
                         cldImg={headerImage}
-                        className="w-80 h-60 object-fill"
+                        className="w-full md:w-80 h-48 md:h-60 object-cover rounded-lg"
                     />
-                    <div className="text-left flex flex-col gap-2">
+
+                    {/* Villa details section */}
+                    <div className="text-left flex flex-col gap-2 mt-4 md:mt-0">
                         <div>
-                            <h1 className="text-[var(--font-header)] text-3xl inline-block">{villa.name}</h1>
+                            <h1 className="text-[var(--font-header)] text-2xl md:text-3xl inline-block">{villa.name}</h1>
                         </div>
-                        <div className="text-left font-body text-xl">
+                        <div className="text-left font-body text-lg md:text-xl">
                             {villa.numVillas ? (
                                 <>
                                     <span>{villa.numVillas} {villa.numVillas > 1 ? "villas" : "villa"} | </span>
@@ -148,28 +285,31 @@ function VillaDetails() {
                                 <span>{villa.numRooms} Rooms</span>
                             )}
                         </div>
-                        {/* Display hotspots if available */}
+
+                        {/* Responsive text for additional info */}
                         {villa.hotspots?.length > 0 && (
-                            <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+                            <span className="text-[var(--color-text)] text-sm md:text-base text-[var(--font-navigation)] italic">
                                 Property is located {villa.hotspots.join(", ")}
                             </span>
                         )}
-                        {/* Display occasions if available */}
                         {villa.occasions?.length > 0 && (
-                            <span className="text-[var(--color-text)] text-[var(--font-navigation)] italic">
+                            <span className="text-[var(--color-text)] text-sm md:text-base text-[var(--font-navigation)] italic">
                                 Perfect for all occasions like {villa.occasions.join(", ")}
                             </span>
                         )}
-                        {/* Display special events if available */}
                         {villa.specialEvents?.length > 0 && (
-                            <span className="text-[var(--color-text)] font-[var(--font-navigation)] italic">
+                            <span className="text-[var(--color-text)] text-sm md:text-base font-[var(--font-navigation)] italic">
                                 Special events include: {villa.specialEvents.join(", ")}
                             </span>
                         )}
-                        {/* Display amenities */}
+
+                        {/* Responsive amenities grid */}
                         <div className="flex flex-wrap gap-1.5 space-y-1 mt-4">
                             {villa.amenities.map((item, index) => (
-                                <span key={index} className="bg-transparent w-fit border-1 text-sm text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2">
+                                <span
+                                    key={index}
+                                    className="bg-transparent w-fit border-1 text-xs md:text-sm text-[var(--color-secondary)] font-navigation border-[var(--color-primary)] rounded-xl py-1 px-2"
+                                >
                                     {item}
                                 </span>
                             ))}
@@ -178,58 +318,60 @@ function VillaDetails() {
                 </div>
                 <hr className="border-t border-[var(--color-primary)] my-4" />
             </div>
-            <div className="mt-10 space-y-6">
-                {loading ?
-                    (
-                        <div className="text-center">Loading images...</div>
-                    ) : (
-                        villa.villas.map((singleVilla, idx) => (
-                            <div key={idx}>
-                                {villa.numVillas > 1 && (
-                                    <h2 className="text-left font-header text-2xl mb-4">
-                                        Villa No. {singleVilla.villaNumber}
-                                    </h2>
+
+            {/* Gallery section */}
+            <div className="mt-6 lg:mt-10 space-y-4 md:space-y-6">
+                {loading ? (
+                    <div className="text-center">Loading images...</div>
+                ) : (
+                    villa.villas.map((singleVilla, idx) => (
+                        <div key={idx}>
+                            {villa.numVillas > 1 && (
+                                <h2 className="text-left font-header text-xl md:text-2xl mb-3 md:mb-4">
+                                    Villa No. {singleVilla.villaNumber}
+                                </h2>
+                            )}
+                            {/* Responsive photo album */}
+                            <MasonryPhotoAlbum
+                                photos={displayedImages[singleVilla.villaNumber] || []}
+                                targetRowHeight={100}
+                                spacing={4}
+                                onClick={({ index: current }) => {
+                                    const allVillaImages = villa.villas.flatMap(v =>
+                                        displayedImages[v.villaNumber] || []
+                                    );
+                                    setCurrentSlides(allVillaImages);
+                                    const globalIndex = allVillaImages.findIndex(
+                                        img => img.publicId === displayedImages[singleVilla.villaNumber][current].publicId
+                                    );
+                                    setIndex(globalIndex);
+                                }}
+                            />
+
+                            {/* Show more/less buttons */}
+                            <div className="flex justify-center gap-4 mt-4">
+                                {!canLoadLess(singleVilla.villaNumber) && hasMore(singleVilla.villaNumber) && (
+                                    <span
+                                        onClick={() => loadMore(singleVilla.villaNumber)}
+                                        className="font-bold text-sm md:text-base text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer"
+                                    >
+                                        Show More
+                                    </span>
                                 )}
-                                {/* Display the photo album */}
-                                <MasonryPhotoAlbum
-                                    photos={displayedImages[singleVilla.villaNumber] || []}
-                                    targetRowHeight={150}
-                                    onClick={({ index: current }) => {
-                                        // Collect all images from ALL villas
-                                        const allVillaImages = villa.villas.flatMap(v =>
-                                            displayedImages[v.villaNumber] || []
-                                        );
-                                        setCurrentSlides(allVillaImages);
-                                        // Find the correct global index
-                                        const globalIndex = allVillaImages.findIndex(
-                                            img => img.publicId === displayedImages[singleVilla.villaNumber][current].publicId
-                                        );
-                                        setIndex(globalIndex);
-                                    }}
-                                />
-                                <div className="flex justify-center gap-4">
-                                    {/* Show more/less buttons */}
-                                    {!canLoadLess(singleVilla.villaNumber) && hasMore(singleVilla.villaNumber) && (
-                                        <span
-                                            onClick={() => loadMore(singleVilla.villaNumber)}
-                                            className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
-                                        >
-                                            Show More
-                                        </span>
-                                    )}
-                                    {canLoadLess(singleVilla.villaNumber) && (
-                                        <button
-                                            onClick={() => loadLess(singleVilla.villaNumber)}
-                                            className="font-bold text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer mt-4"
-                                        >
-                                            Show Less
-                                        </button>
-                                    )}
-                                </div>
+                                {canLoadLess(singleVilla.villaNumber) && (
+                                    <button
+                                        onClick={() => loadLess(singleVilla.villaNumber)}
+                                        className="font-bold text-sm md:text-base text-[var(--color-secondary)] font-[var(--font-navigation)] cursor-pointer"
+                                    >
+                                        Show Less
+                                    </button>
+                                )}
                             </div>
-                        ))
-                    )}
-                {/* Lightbox for image viewing */}
+                        </div>
+                    ))
+                )}
+
+                {/* Lightbox remains unchanged as it's already responsive */}
                 <Lightbox
                     plugins={[Zoom, Thumbnails, Fullscreen]}
                     index={index}
@@ -238,23 +380,37 @@ function VillaDetails() {
                     close={() => setIndex(-1)}
                 />
             </div>
+
+            {/* Map section */}
             <hr className="border-t border-[var(--color-primary)] my-4" />
-            <div>
-                <div className="flex flex-row gap-10">
-                    {/* Google Maps iframe */}
+            {/* <div>
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
                     <iframe
                         src={villa.gmaps}
                         width="100%"
-                        height="100%"
+                        height="300"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        className="h-50 w-100"
                     />
-                    <div>
-                        <h2 className="text-3xl text-left">Spot the Location on Map</h2>
+                    <div className="lg:w-1/3">
+                        <h2 className="text-2xl md:text-3xl text-left">Spot the Location on Map</h2>
                     </div>
+                </div>
+            </div> */}
+            <div>
+                <h2 className="text-2xl text-left mb-4">Spot the Location on Map</h2>
+                <div className="flex flex-col md:flex-row gap-6 lg:gap-10">
+                    <iframe
+                        src={villa.gmaps}
+                        width="w-2/3"
+                        height="300"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
                 </div>
             </div>
         </div>
