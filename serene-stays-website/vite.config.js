@@ -14,5 +14,6 @@ export default defineConfig({
   },
   resolve: {
     dedupe: ['styled-components']
-  }
+  },
+  base: './'
 })
