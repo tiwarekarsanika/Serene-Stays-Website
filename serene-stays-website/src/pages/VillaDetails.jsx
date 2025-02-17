@@ -128,7 +128,7 @@ function VillaDetails() {
     return (
         <div className="p-4 md:p-8 lg:p-20">
             <div className="flex flex-col justify-between">
-                <div className="flex flex-col md:flex-row justify-between gap-4">
+                <div className="flex flex-col md:flex-row justify-start gap-10">
                     {/* Header image - responsive width */}
                     <AdvancedImage
                         cldImg={headerImage}

@@ -17,7 +17,8 @@ function VillaCard({ villa }) {
         .quality("auto:best");
 
     return (
-        <div className="w-full border border-[var(--color-primary)] rounded-xl p-4 md:p-5 text-left mt-2 md:mt-4 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-105 hover:z-5">
+        <Link to={`/${villa.location.toLowerCase()}/villa-details`} state={{ villa }}>
+        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full h-full border border-[var(--color-primary)] rounded-xl p-4 md:p-5 text-left mt-2 md:mt-4 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-105 hover:z-5">
             <div className="flex flex-col gap-2 md:gap-3 mb-3 md:mb-5">
                 <AdvancedImage
                     cldImg={headerImage}
@@ -44,13 +45,14 @@ function VillaCard({ villa }) {
                     ))}
                 </div>
             </div>
-            <Link to={`/${villa.location.toLowerCase()}/villa-details`} state={{ villa }}>
+            {/* <Link to={`/${villa.location.toLowerCase()}/villa-details`} state={{ villa }}>
                 <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="flex items-center gap-2 cursor-pointer text-sm md:text-base hover:text-[var(--color-primary)]">
                     Image Gallery & More Details <KeyboardDoubleArrowRightIcon fontSize="small" />
                 </div>
-            </Link>
+            </Link> */}
         </div>
+        </Link>
     );
 }
 

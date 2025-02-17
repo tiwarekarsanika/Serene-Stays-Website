@@ -19,7 +19,7 @@ function Footer() {
 
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Instagram Link */}
-                    <div className="flex flex-col md:flex-row items-center space-x-4 mb-2">
+                    <div className="flex flex-col md:flex-row items-center space-x-4 mb-4">
                         <Link to="https://www.instagram.com/_serenestays_" target="_blank">
                             <InstagramIcon
                                 className={`text-3xl cursor-pointer ${hover ? "text-[var(--color-primary)]" : "text-white"}`}
@@ -43,9 +43,9 @@ function Footer() {
             <hr className="border-t border-[var(--color-primary)] my-4" />
 
             {/* Copyrights */}
-            <div className="text-center font-navigation text-[var(--color-primary)] text-xs md:text-sm lg:text-base pb-4">
-                Copyright <CopyrightIcon className="inline-block text-xs md:text-sm" /> 2025 Serene Stays |
-                <span className="text-xs md:text-sm"> Made with ❤ by Sanika</span>
+            <div className="text-center font-navigation text-[var(--color-primary)] text-[10px] md:text-sm lg:text-base pb-4">
+                <span> Copyright <CopyrightIcon className="inline-block" style={{fontSize: "1rem"}} /> 2025 Serene Stays |</span> 
+                <span> Made with ❤ by Sanika</span>
             </div>
         </div>
     );
