@@ -2,6 +2,7 @@ import * as React from 'react';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import HomeIcon from '@mui/icons-material/Home';
 import { Alert } from 'antd';
 import { useState } from 'react';
 
@@ -105,7 +106,7 @@ const Contact = () => {
 
           <div className="flex items-center gap-4">
             <div className="flex items-center justify-center">
-              <EmailIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
+              <HomeIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
             </div>
             <div>
               <p className="text-xl font-body text-left text-[var(--color-secondary)]">Office Address</p>

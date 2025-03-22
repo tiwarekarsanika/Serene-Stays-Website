@@ -20,7 +20,7 @@ const About = () => {
       <div className="font-body text-lg text-left px-6 sm:px-10 md:px-16 lg:px-20 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 text-justify">
           <p className="text-base sm:text-lg md:text-xl leading-relaxed">
-            At <span className="font-bold">Serene Stays by Prasad Hospitality</span>, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Goa, Mahabaleshwar, and Thailand. 
+            At <span className="font-bold">Serene Stays by Prasad Hospitality</span>, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Karjat, Goa, Mahabaleshwar, and Thailand. 
             With over 20 years of experience in the hospitality industry, we have mastered the art of creating unforgettable stays tailored to your needs. 
             Whether you are looking for a peaceful retreat, a family vacation, or a grand celebration, our properties offer the perfect setting. 
             Each villa is thoughtfully designed with private pools, lush green lawns, and spacious interiors, ensuring a blend of opulence and relaxation. 

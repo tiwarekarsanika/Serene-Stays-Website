@@ -48,13 +48,19 @@ function DrawerMenu() {
 
         {/* New Links for Locations */}
         <Link to="/virar" onClick={onClose}>
-          <p className='cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Virar</p>
+          <p className='md:hidden cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Virar</p>
+        </Link>
+        <Link to="/karjat" onClick={onClose}>
+          <p className='md:hidden cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Karjat</p>
         </Link>
         <Link to="/mahabaleshwar" onClick={onClose}>
-          <p className='cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Mahabaleshwar</p>
+          <p className='md:hidden cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Mahabaleshwar</p>
         </Link>
         <Link to="/goa" onClick={onClose}>
-          <p className='cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Goa</p>
+          <p className='md:hidden cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Goa</p>
+        </Link>
+        <Link to="/thailand" onClick={onClose}>
+          <p className='md:hidden cursor-pointer text-[var(--color-text)] my-6 hover:text-[var(--color-primary)]'>Thailand</p>
         </Link>
       </Drawer>
     </>

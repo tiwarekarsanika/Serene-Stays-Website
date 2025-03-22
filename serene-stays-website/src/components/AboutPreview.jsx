@@ -58,7 +58,7 @@ function AboutPreview() {
                     }`}
                 >
                     <p className="text-lg md:text-xl text-justify font-body leading-relaxed">
-                        At Serene Stays by Prasad Hospitality, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Goa, Mahabaleshwar, and Thailand.
+                        At Serene Stays by Prasad Hospitality, we redefine luxury and comfort with our exclusive collection of villas and resort rooms across Virar, Karjat, Goa, Mahabaleshwar, and Thailand.
                         With over 20 years of experience in the hospitality industry, we have mastered the art of creating unforgettable stays tailored to your needs.
                         Whether you are looking for a peaceful retreat, a family vacation, or a grand celebration, our properties offer the perfect setting.
                         Each villa is thoughtfully designed with private pools, lush green lawns, and spacious interiors, ensuring a blend of opulence and relaxation.
