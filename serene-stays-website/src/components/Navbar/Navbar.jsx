@@ -24,10 +24,16 @@ function Navbar() {
                             <Link to="/virar">Virar</Link>
                         </li>
                         <li className="cursor-pointer hover:text-[rgb(244,178,154)]">
+                            <Link to="/karjat">Karjat</Link>
+                        </li>
+                        <li className="cursor-pointer hover:text-[rgb(244,178,154)]">
                             <Link to="/mahabaleshwar">Mahabaleshwar</Link>
                         </li>
                         <li className="cursor-pointer hover:text-[rgb(244,178,154)]">
                             <Link to="/goa">Goa</Link>
+                        </li>
+                        <li className="cursor-pointer hover:text-[rgb(244,178,154)]">
+                            <Link to="/thailand">Thailand</Link>
                         </li>
                     </ul>
                 </nav>

@@ -54,7 +54,8 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-background) !important;
+
   color: var(--color-text);
   height: 100%;
   width: 100%;
@@ -63,17 +64,10 @@ body {
   place-items: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
+@media (prefers-color-scheme: light), (prefers-color-scheme: dark) {
+  html, body {
+      background-color: var(--color-background) !important;
+      min-height: 100vh;
   }
 }
+

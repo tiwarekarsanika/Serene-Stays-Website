@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useLocation } from "react-router-dom";
 import Lightbox from "yet-another-react-lightbox";
-import { MasonryPhotoAlbum } from "react-photo-album";
-import "react-photo-album/masonry.css";
+import { RowsPhotoAlbum } from "react-photo-album";
+import "react-photo-album/rows.css";
 import "yet-another-react-lightbox/styles.css"
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Zoom, Thumbnails, Fullscreen } from "yet-another-react-lightbox/plugins";
@@ -147,7 +147,11 @@ function VillaDetails() {
                                     <span>{villa.space} {villa.numVillas > 1 ? "each" : ""}</span>
                                 </>
                             ) : (
-                                <span>{villa.numRooms} Rooms</span>
+                                villa.numRooms ? (
+                                    <span>{villa.numRooms} Rooms</span>
+                                ) : (
+                                    <span></span>
+                                )
                             )}
                         </div>
 
@@ -197,10 +201,10 @@ function VillaDetails() {
                                 </h2>
                             )}
                             {/* Responsive photo album */}
-                            <MasonryPhotoAlbum
+                            <RowsPhotoAlbum
                                 photos={displayedImages[singleVilla.villaNumber] || []}
-                                targetRowHeight={100}
-                                spacing={4}
+                                targetRowHeight={200}
+                                rowConstraints={{ maxPhotos: 5 }}
                                 onClick={({ index: current }) => {
                                     const allVillaImages = villa.villas.flatMap(v =>
                                         displayedImages[v.villaNumber] || []
@@ -248,12 +252,15 @@ function VillaDetails() {
 
             {/* Map section */}
             <hr className="border-t border-[var(--color-primary)] my-4" />
-            <div>
-                <h2 className="text-2xl text-left mb-4">Spot the Location on Map</h2>
-                <div className="flex flex-col md:flex-row gap-6 lg:gap-10">
+            <div className="flex flex-col md:flex-row justify-start md:justify-between gap-6 mb-10" >
+                <div className="flex flex-col gap-4 md:gap-8 w-full md:w-1/3">
+                    <h2 className="text-2xl md:text-4xl text-left">Spot Our Location on the Map</h2>
+                    <p className="italic text-left">Click on 'View Larger Map' to get directions, explore nearby attractions, and navigate to our location with ease.</p>
+                </div>
+                <div className="w-full md:w-2/3">
                     <iframe
                         src={villa.gmaps}
-                        width="w-2/3"
+                        width="100%"
                         height="300"
                         style={{ border: 0 }}
                         allowFullScreen=""

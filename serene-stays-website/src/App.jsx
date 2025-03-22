@@ -10,6 +10,8 @@ import PolicyPage from './pages/PolicyPage'
 import Contact from './pages/Contact'
 import Goa from './pages/VillaPages/Goa'
 import Mahabaleshwar from './pages/VillaPages/Mahabaleshwar'
+import Karjat from './pages/VillaPages/Karjat'
+import Thailand from './pages/VillaPages/Thailand'
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
             <Route path="/virar" element={<Virar />} />
             <Route path="/goa" element={<Goa />} />
             <Route path="/mahabaleshwar" element={<Mahabaleshwar />} />
+            <Route path="/karjat" element={<Karjat />} />
+            <Route path="/thailand" element={<Thailand />} />
           </Routes>
         </div>
         <Footer />

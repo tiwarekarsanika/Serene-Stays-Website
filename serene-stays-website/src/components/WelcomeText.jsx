@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
-
+ 
 function WelcomeText() {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -26,7 +26,7 @@ function WelcomeText() {
     }, []);
 
     return (
-        <div
+        <div 
             id="welcome-text-section"
             className={`transition-all duration-[1500ms] ease-in-out transform ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"

@@ -258,10 +258,98 @@
     "Thailand": {
         "properties": [
             {
-                "name": "Cozy Resort",
+                "name": "Cozy New",
                 "location": "Thailand",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8788776788783!2d100.87670539999999!3d12.915505499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102966e44c60ce5%3A0xe850f79d35c2850c!2sCozy%20Resort%20-%20A%20Boutique%20Hotel.!5e0!3m2!1sen!2sin!4v1742575530742!5m2!1sen!2sin",
+                "amenities": [
+                    "Free Parking (Including Coach)",
+                    "Swimming Pool with Sun Bath",
+                    "Elevator",
+                    "Gym with Sauna",
+                    "Massage",
+                    "Rooftop Restaurant",
+                    "Pool Bar",
+                    "Intercom & High Speed Wifi",
+                    "Free Shuttle Service",
+                    "Daily Housekeeping",
+                    "Flat Screen TV with Satellite Channels",
+                    "Electric Kettle",
+                    "24hrs Front Desk"
+                ],
                 "hotspots": [
-                    "near Marina Beach"
+                    "1.5km from Walking Street",
+                    "2km from Pattaya Beach",
+                    "2.5km from Jomtien Beach",
+                    "2.2km from Cozy Beach",
+                    "2.2km from Big Buddha"
+                ],
+                "headerImg": "CozyNew-WebP/uxl7qmiqnibp754mfain",
+                "villas": [
+                    {
+                        "villaNumber": 1,
+                        "images": [
+                            "CozyNew-WebP/j2rluoxvqsqslfobytf6",
+                            "CozyNew-WebP/shekg87gvpf0moqsugcw",
+                            "CozyNew-WebP/gtwi1cd2qhmfxt2n83ab",
+                            "CozyNew-WebP/oqqjdcld9z4axc2issud",
+                            "CozyNew-WebP/vlcreeuhvqn6bxhbceas",
+                            "CozyNew-WebP/zsfybhk9fayedrkeeqo1",
+                            "CozyNew-WebP/a0j2qbgrtrai80uk5tsg",
+                            "CozyNew-WebP/vshhshxvoypn32erleqi",
+                            "CozyNew-WebP/uxl7qmiqnibp754mfain",
+                            "CozyNew-WebP/wjnxojawmdfk9fkkhyrp",
+                            "CozyNew-WebP/oqvumabtdxhebplhyn8v"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "Karjat": {
+        "properties": [
+            {
+                "name": "Hill View Villa",
+                "location": "Karjat",
+                "gmaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.384801766025!2d73.39687030000002!3d19.0907676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7f559fae66e95%3A0x3b319f7358c7decd!2sIshara%20Stays%20(Karjat)!5e0!3m2!1sen!2sin!4v1742575602880!5m2!1sen!2sin",
+                "numVillas": 1,
+                "space": "5 bhk",
+                "amenities": [
+                    "Air Conditioner",
+                    "Parking",
+                    "Swimming Pool",
+                    "Indoor Games",
+                    "Multiple Sit Outs",
+                    "Veg Nonveg",
+                    "Open Terrace Area",
+                    "High Speed Wifi",
+                    "CCTV",
+                    "Smart TV",
+                    "Full Time Power Backup",
+                    "BBQ on Request",
+                    "24x7 Caretaker",
+                    "Delicious Food"
+                ],
+                "headerImg": "HillView/fl4gg6ujnjqot9ifgyyw",
+                "villas": [
+                    {
+                        "villaNumber": 1,
+                        "images": [
+                            "HillView/bnfsqk1dnriawvqc6etd",
+                            "HillView/xbh6gco6nzfeyprgodzm",
+                            "HillView/g6oqoeunusaaxal2n2dr",
+                            "HillView/mztsth0uhxkdrl9yagpm",
+                            "HillView/w4viaresleuylycxz09t",
+                            "HillView/fl4gg6ujnjqot9ifgyyw",
+                            "HillView/azye5srsjwwwhybtg7by",
+                            "HillView/rupv1no5vlvqwaas0uo6",
+                            "HillView/gokqwaqq5apgbxxxwizw",
+                            "HillView/pw3zv3qjkmauvckagk0r",
+                            "HillView/swumvm53yerqun97wo3q",
+                            "HillView/pkrwnyls0sj3yydn5lsx",
+                            "HillView/bm2grs6k43f8rs7h9jfo",
+                            "HillView/ntdftrvgg4w1c4ozuj57"
+                        ]
+                    }
                 ]
             }
         ]

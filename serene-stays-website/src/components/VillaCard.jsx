@@ -18,7 +18,7 @@ function VillaCard({ villa }) {
 
     return (
         <Link to={`/${villa.location.toLowerCase()}/villa-details`} state={{ villa }}>
-        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full h-full border border-[var(--color-primary)] rounded-xl p-4 md:p-5 text-left mt-2 md:mt-4 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-105 hover:z-5">
+        <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-full h-full border border-[var(--color-primary)] rounded-xl p-4 md:p-5 text-left mb-2 md:mb-4 mt-2 md:mt-4 transition-all duration-300 hover:shadow-[0_0_16px_#fed6be] hover:scale-102 hover:z-5">
             <div className="flex flex-col gap-2 md:gap-3 mb-3 md:mb-5">
                 <AdvancedImage
                     cldImg={headerImage}
@@ -34,7 +34,11 @@ function VillaCard({ villa }) {
                             <span>{villa.space} {villa.numVillas > 1 ? "each" : ""}</span>
                         </>
                     ) : (
-                        <span>{villa.numRooms} Rooms</span>
+                        villa.numRooms ? (
+                            <span>{villa.numRooms} Rooms</span>
+                        ) : (
+                            <span></span>
+                        )
                     )}
                 </div>
                 <div className="flex flex-wrap gap-2">

@@ -1,4 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -8,7 +7,6 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import headerData from '../data/header.json';
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from '@cloudinary/react';
-import { fill } from "@cloudinary/url-gen/actions/resize";
 
 function Header() {
     const cld = new Cloudinary({
@@ -21,8 +19,6 @@ function Header() {
         cld.image(image)
             .quality("auto:best")
     );    
-
-    // console.log(images)
 
     return (
         <>
@@ -42,3 +38,5 @@ function Header() {
 }
 
 export default Header;
+
+

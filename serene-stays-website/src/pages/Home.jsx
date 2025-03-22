@@ -4,7 +4,6 @@ import WelcomeText from "../components/WelcomeText";
 import USPs from "../components/USPs";
 import AboutPreview from "../components/AboutPreview";
 
-
 export function Home() {
   return (
     <div>

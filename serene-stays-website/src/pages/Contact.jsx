@@ -57,7 +57,7 @@ const Contact = () => {
       query: ''
     });
 
-    
+
     const data = await response.json();
     if (data.success) {
       console.log("Form submitted successfully");
@@ -84,34 +84,47 @@ const Contact = () => {
           <h1 className="text-6xl font-header mb-6 text-left">Contact Information</h1>
 
           <div className="flex items-center gap-4">
-           <div className="flex items-center justify-center">
-             <PhoneIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
-           </div>
-           <div>
-             <p className="text-xl font-body text-left text-[var(--color-text)]">Phone Number</p>
-             <p className="font-body text-left">+91 98201 16789</p>
-           </div>
-         </div>
+            <div className="flex items-center justify-center">
+              <PhoneIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
+            </div>
+            <div>
+              <p className="text-xl font-body text-left text-[var(--color-secondary)]">Phone Number</p>
+              <p className="font-body text-left">+91 98201 16789</p>
+            </div>
+          </div>
 
-         <div className="flex items-center gap-4">
-           <div className="flex items-center justify-center">
-             <EmailIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
-           </div>
-           <div>
-             <p className="text-xl font-body text-left text-[var(--color-text)]">Email Address</p>
-             <p className="font-body text-left">prasadraorane173@gmail.com</p>
-           </div>
-         </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center">
+              <EmailIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
+            </div>
+            <div>
+              <p className="text-xl font-body text-left text-[var(--color-secondary)]">Email Address</p>
+              <p className="font-body text-left">prasadraorane173@gmail.com</p>
+            </div>
+          </div>
 
-         <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center">
+              <EmailIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
+            </div>
+            <div>
+              <p className="text-xl font-body text-left text-[var(--color-secondary)]">Office Address</p>
+              <p className="font-body text-left">Chrystal Plaza, B-Wing,
+                Office No- 706-708, 7th Floor,
+                New Link Road, Mumbai- 400053
+                (Opp. Andheri Infinity Mall)</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
             <div className="flex items-center justify-center">
               <AccessTimeIcon className="text-[var(--color-secondary)]" sx={{ fontSize: "2rem" }} />
             </div>
             <div>
-              <p className="text-xl font-body text-left text-[var(--color-text)]">Business Hours</p>
+              <p className="text-xl font-body text-left text-[var(--color-secondary)]">Business Hours</p>
               <p className="font-body text-left">Mon - Sun: 10:00 AM - 10:00 PM</p>
             </div>
-        </div>
+          </div>
         </div>
 
         <div className="hidden lg:block min-h-10 w-0.5 bg-[var(--color-primary)] opacity-50"></div>
