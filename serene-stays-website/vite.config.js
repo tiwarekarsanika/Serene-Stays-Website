@@ -16,10 +16,21 @@ export default defineConfig({
     dedupe: ['styled-components']
   },
   base: './',
-  build: {
-    outDir: 'dist',
-  },
+  // build: {
+  //   outDir: 'dist',
+  // },
   server: {
     historyApiFallback: true
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
+      }
+    },
   }
-})
+  })
