@@ -15,5 +15,11 @@ export default defineConfig({
   resolve: {
     dedupe: ['styled-components']
   },
-  base: './'
+  base: './',
+  build: {
+    outDir: 'dist',
+  },
+  server: {
+    historyApiFallback: true
+  }
 })
